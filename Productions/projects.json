@@ -1,0 +1,201 @@
+{
+  "color": "#c41e3a",
+  "drive_link": "https://drive.google.com/drive/folders/1tkdnW_jN9gRICNHgyvSt7dcMV5tjZcRI?usp=drive_link",
+  "projects": {
+    "ChatGPT": {
+      "color": "#92e1c0",
+      "drive_link": "https://drive.google.com/drive/folders/1tp8f852oS3p2rUWa8B0GHhAqadnifMvA?usp=drive_link",
+      "files": [
+        {
+          "description": "A ChatGPT Story. WE COULD MAKE LIKE 3 BOOKS OFF OF THIS!",
+          "drive_link": "https://docs.google.com/document/d/1WcaKjzvGI9xzOcJdPe4F-VWvmfAI-HazufmGpM-ubQk/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "Echoes of Eternity",
+          "nameStatus": 3
+        }
+      ]
+    },
+    "elementalists": {
+      "color": "#a47ae2",
+      "drive_link": "https://drive.google.com/drive/folders/1miBZWDTKVQlu0HE1dGgOugnuxpQ8AxxO?usp=drive_link",
+      "files": [
+        {
+          "drive_link": "https://docs.google.com/document/d/1rcR6gsrEmbLCBdDp6F2wKOJ2qYVpWQdFGxjRh3kVuiw/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "Elementalists"
+        },
+        {
+          "drive_link": "https://docs.google.com/document/d/17hnb4xwgK3ntHF2xawNDYciAvIxsT1_H04GNudj99BU/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "Elementalists Planning"
+        }
+      ],
+      "nameStatus": 1
+    },
+    "Elementals": {
+      "color": "#16a765",
+      "description": "A story where people control a certain element. A book, TV show, and a game.",
+      "drive_link": "https://drive.google.com/drive/folders/1SLRUnHnteRl7yORXd8_LJ0pUDiX-w81N?usp=drive_link",
+      "files": [
+        {
+          "drive_link": "https://docs.google.com/spreadsheets/d/1BRtCKUKEmyvuW7sJcKRP9oae-w5QrGbuNJzzzkFk4Zk/edit?usp=drive_link",
+          "fileType": "Google Sheets",
+          "title": "Elementals"
+        },
+        {
+          "description": "A card deck design for an Elementals Card Game.",
+          "drive_link": "https://docs.google.com/presentation/d/1-aPqPbKnA6u-WUg23gU5FayQaeF6t7VrlkcFijVEBPA/edit?usp=drive_link",
+          "fileType": "Google Slides",
+          "title": "Elementals Card Game Design"
+        },
+        {
+          "description": "A simple ground map for the Elementals.",
+          "drive_link": "https://docs.google.com/drawings/d/1H9KHbm6TAf9WCZ9AIwcoJFYZvXhTT6MLNqRaXJVLCFE/edit?usp=drive_link",
+          "fileType": "Google Drawings",
+          "title": "Elementals Mainland Map"
+        },
+        {
+          "description": "A simple map of the skies of the Elementals.",
+          "drive_link": "https://docs.google.com/drawings/d/1_dJ64gaHmUrwrLo8LSyjLavPZHkq3JmZb1LTo_Rbq6c/edit?usp=drive_link",
+          "fileType": "Google Drawings",
+          "title": "Elementals Sky Map"
+        }
+      ],
+      "nameStatus": 2
+    },
+    "The Adventures Of Dog": {
+      "color": "#ac725e",
+      "description": "The Adventures of Dog, where he and his cousins explore different worlds.",
+      "drive_link": "https://drive.google.com/drive/folders/1pmxTMzu5jlkYFmfHOUyNZVYE6Gfnrglx?usp=drive_link",
+      "files": [
+        {
+          "description": "In the first book of the tetralogy, Dog and his cousins Aflac and Blocky work towards defeating their other cousin Plankton in a tournament to prevent him from taking over the world.",
+          "drive_link": "https://docs.google.com/document/d/1Ln4GufZxBYPilDvDMsZZBb_-V2I8z4h0D3m6ukTGcdc/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "FIT BATTLE",
+          "nameStatus": 4
+        },
+        {
+          "description": "The Adventures of Dog, where he and his cousins explore different worlds.",
+          "drive_link": "https://docs.google.com/document/d/1RHtiLY0Gnl7nvwVXBMvdSt8vmozrrtVKiU4vOKeFiLE/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The Adventures of Dog",
+          "nameStatus": 3
+        },
+        {
+          "description": "In the second book of the tetralogy, Dog and his cousins go on a quest to the Amazon to save Kitty from her older brothers, Puppy and Turtle.",
+          "drive_link": "https://docs.google.com/document/d/12VZ9H1p-C3IvsAvpVGo9GXzm1l20RfIDYUNNr_fgK64/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The Amazon Airship",
+          "nameStatus": 3
+        },
+        {
+          "description": "In the third book of the tetralogy, Baby tells a story in which after a zombie apocalypse occurs, he has to venture far east to find and defeat the most Powerful Zombie.",
+          "drive_link": "https://docs.google.com/document/d/1fEVqdVYM2DwJrXYHzH7SQXL6CrryYILRkt777B7v0Kk/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "THE ZOMBIE APOCALYPSE",
+          "nameStatus": 3
+        },
+        {
+          "description": "In the fourth book of this tetralogy, Aflac, Blocky, and Dog go to the sun to rescue their baby cousin, Jeffery.",
+          "drive_link": "https://docs.google.com/document/d/11M1aCOHwLMtK4OzOcV_hpmI648zWoGVPoJTaq6tjKNA/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "Trapped in Space",
+          "nameStatus": 3
+        },
+        {
+          "description": "The summary of Trapped in Space",
+          "drive_link": "https://docs.google.com/document/d/10lKw3S0Acd9yYhoGALQDugSxcTe1VuXtew_-MvVm618/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "Trapped in Space Info",
+          "nameStatus": 3
+        }
+      ],
+      "nameStatus": 3
+    },
+    "The Criminal Mastermind Thing": {
+      "color": "#8f8f8f",
+      "description": "A story where a young criminal mastermind and his henchmen capture someone, but due to the nature of their victim, they change their ways.",
+      "drive_link": "https://drive.google.com/drive/folders/10sOltsG5xSh9rwitGUWNcjJSEgHjCSH5?usp=drive_link",
+      "files": [
+        {
+          "drive_link": "https://docs.google.com/document/d/1B9kEsuImbpIFwIORZ3rAeVJdVXlW_OYtNMzd-F3LG_I/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The Criminal Mastermind Thing Info"
+        },
+        {
+          "drive_link": "https://docs.google.com/document/d/1zuSeq3ueJLE9IZnpXOhliOcuPgNBaErR2nFlUrabOVE/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The Criminal Mastermind Thing Story"
+        }
+      ],
+      "nameStatus": 1
+    },
+    "The Pirate Thing": {
+      "color": "#f83a22",
+      "description": "A story where a group of kids become pirates and go on a quest to get stronger than the pirates that overran their village.",
+      "drive_link": "https://drive.google.com/drive/folders/1eTWuskkqr7hqernEraQF6GCixp07jhM-?usp=drive_link",
+      "files": [
+        {
+          "drive_link": "https://docs.google.com/document/d/1Yc5H9egsGs3_ikseDSZneVzYIsYiw7Up_dE8i0PGHpI/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The Pirate Thing Overview"
+        },
+        {
+          "drive_link": "https://docs.google.com/document/d/1y2Ez0GipFd0BowvRqhH_nJMQ1-9ZuzY1LI-NKgnPz1g/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The Pirate Thing Story"
+        }
+      ],
+      "nameStatus": 1
+    },
+    "The School Thing": {
+      "color": "#fad165",
+      "description": "A story where a group of kids investigate a series of unusual events occuring in their high school.",
+      "drive_link": "https://drive.google.com/drive/folders/1jVHJw7zsF3KYeqEeeJMG1aJe3gMC-Loq?usp=drive_link",
+      "files": [
+        {
+          "drive_link": "https://docs.google.com/document/d/1rw8-hU8vinfIWL6laoXUavYbwTAodm9ayfG6fDuZhdk/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The School Thing Overview"
+        },
+        {
+          "drive_link": "https://docs.google.com/document/d/1uJUv0KDIdfN5zbZMABaUZpht6uml8dGwJocjtXcJU7A/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The School Thing Story"
+        }
+      ],
+      "nameStatus": 1
+    },
+    "The Thief And The Princess": {
+      "color": "#4986e7",
+      "description": "A series in which a well known thief joins up with the princess of the kingdom to put a stop to her uncle's evildoing.",
+      "drive_link": "https://drive.google.com/drive/folders/1Gqx2TwhSyCukoXEluOC8GnxdAIHIvWjf?usp=drive_link",
+      "files": [
+        {
+          "drive_link": "https://docs.google.com/document/d/13Eodoko8nWEEFv75_6AAkrp0QKO1vUrO9tTGhQ5htrI/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The Thief and the Princess Overview"
+        },
+        {
+          "drive_link": "https://docs.google.com/document/d/1CizRy8OGpwQvrNBT0AnbnkuWABawrosbRACSOHJ4ZxU/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The Thief and the Princess Story"
+        }
+      ],
+      "nameStatus": 1
+    },
+    "Other": {
+      "color": "black",
+      "drive_link": "https://drive.google.com/drive/folders/1ZG2UUMGE3CfqR-xgRGlZj3K70zDfgMf_?usp=drive_link",
+      "files": [
+        {
+          "drive_link": "https://docs.google.com/document/d/1fHn-9NBMlcjW6OmBgv-eWhhtNDcXr43GCjeoVdsYqi0/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "idEk what this is",
+          "nameStatus": 1
+        }
+      ]
+    }
+  }
+}
