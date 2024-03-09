@@ -22,30 +22,18 @@ function start() {
   document.getElementById("main").style.padding = "0 10px 10px 10px";
   document.getElementById("main").style.fontFamily = `"Comic Sans MS", "Comic Sans"`;
   for (const [project, details] of Object.entries(Data.projects)) {
-    console.log(project,details);
-    if (details.description == null) {
-      document.getElementById("main").innerHTML += `<h2><a href="${details.drive_link}" style="text-decoration: none; color: ${details.color};">${project}</a></h2><div id="${project}_content" style="border: 1px solid black; background-color: #ddd; padding: 0 10px 10px 10px;"></div>`;
-    } else {
-      document.getElementById("main").innerHTML += `<h2><a href="${details.drive_link}" style="text-decoration: none; color: ${details.color};">${project}</a></h2><div id="${project}_content" style="border: 1px solid black; background-color: #ddd; padding: 0 10px 10px 10px;"><p>Description: ${details.description}</p></div>`;
-    }
+    document.getElementById("main").innerHTML += `<h2><a href="${details.drive_link}" style="text-decoration: none; color: ${details.color};">${project}</a></h2><div id="${project}_content" style="border: 1px solid black; background-color: #ddd; padding: 0 10px 10px 10px;"></div>`;
+    if (details.description != null) {document.getElementById(`${project}_content`).innerHTML += `<p>Description: ${details.description}</p>`;}
     if (details.nameStatus != null) {document.getElementById(`${project}_content`).innerHTML += `<p>Name Status: ${getStatusDescription(details.nameStatus)}</p>`;}
-    for (const file of details.files) {
-      if (file.description == null) {
-        document.getElementById(`${project}_content`).innerHTML += `<h3><a href="${file.drive_link}" style="text-decoration: none; color: black;">${file.title}</a></h3>`;
-        if (file.nameStatus == null) {
-          document.getElementById(`${project}_content`).innerHTML += `<div style="border: 1px solid black; background-color: #ccc; padding: 0 10px 0 10px;"><p>File Type: ${file.fileType}</p></div>`;
-        } else {
-          document.getElementById(`${project}_content`).innerHTML += `<div style="border: 1px solid black; background-color: #ccc; padding: 0 10px 0 10px;"><p>File Type: ${file.fileType}</p><p>Name Status: ${getStatusDescription(file.nameStatus)}</p></div>`;
-        }
-      } else {
-        document.getElementById(`${project}_content`).innerHTML += `<h3><a href="${file.drive_link}" style="text-decoration: none; color: black;">${file.title}</a></h3>`;
-        if (file.nameStatus == null) {
-          document.getElementById(`${project}_content`).innerHTML += `<div style="border: 1px solid black; background-color: #ccc; padding: 0 10px 0 10px;"><p>Description: ${file.description}</p><p>File Type: ${file.fileType}</p></div>`;
-        } else {
-          document.getElementById(`${project}_content`).innerHTML += `<div style="border: 1px solid black; background-color: #ccc; padding: 0 10px 0 10px;"><p>Description: ${file.description}</p><p>File Type: ${file.fileType}</p<p>Name Status: ${getStatusDescription(file.nameStatus)}</p></div>`;
-        }
-      }
-    }
+    let addDiv = ``;
+    details.files.forEach(file => {
+      document.getElementById(`${project}_content`).innerHTML += `<h3><a href="${file.drive_link}" style="text-decoration: none; color: black;">${file.title}</a></h3>`;
+      addDiv = `<div style="border: 1px solid black; background-color: #ccc; padding: 0 10px 0 10px;">`;
+      if (file.description != null) {addDiv += `<p>Description: ${file.description}</p>`;}
+      addDiv += `<p>File Type: ${file.fileType}</p>`;
+      if (file.nameStatus != null) {addDiv += `<p>Name Status: ${getStatusDescription(file.nameStatus)}</p>`;}
+      document.getElementById(`${project}_content`).innerHTML += addDiv + `</div>`;
+    });
   }
 }
 function getStatusDescription(status) {
