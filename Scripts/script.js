@@ -35,4 +35,5 @@ function start() {
     }
   }
 }
+//p
 function getStatusDescription(status) {switch (status) {case 1: return 'Name will be changed'; case 2: return 'Name will be changed, new name decided'; case 3: return 'Name is fine, might be changed in the future'; case 4: return 'Name is definite'; default: return '';}}
