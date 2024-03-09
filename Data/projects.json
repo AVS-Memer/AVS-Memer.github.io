@@ -186,9 +186,15 @@
       "nameStatus": 1
     },
     "Other": {
-      "color": "black",
+      "color": "#cabdbf",
       "drive_link": "https://drive.google.com/drive/folders/1ZG2UUMGE3CfqR-xgRGlZj3K70zDfgMf_?usp=drive_link",
       "files": [
+        {
+          "drive_link": "https://docs.google.com/document/d/1V6p7Y0wf-dBymY3KXxdjW4j_elz8K7NzFHGNKH57XKk/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "A New Dimension, a Short Story",
+          "nameStatus": 3
+        },
         {
           "drive_link": "https://docs.google.com/document/d/1fHn-9NBMlcjW6OmBgv-eWhhtNDcXr43GCjeoVdsYqi0/edit?usp=drive_link",
           "fileType": "Google Docs",
