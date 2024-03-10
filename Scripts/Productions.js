@@ -22,7 +22,7 @@ function start() {
   document.getElementById("main").style.padding = "0 10px 10px 10px";
   document.getElementById("main").style.fontFamily = `"Comic Sans MS", "Comic Sans"`;
   for (const [project, details] of Object.entries(Data.projects)) {
-    document.getElementById("main").innerHTML += `<h2><a href="${details.drive_link}" style="text-decoration: none; color: ${details.color};">${project}</a></h2><div id="${project}_content" style="border: 1px solid black; background-color: #ddd; padding: 0 10px 10px 10px;"></div>`;
+    document.getElementById("main").innerHTML += `<h2 style="text-align: center"><a href="${details.drive_link}" style="text-decoration: none; color: ${details.color};">${project}</a></h2><div id="${project}_content" style="border: 1px solid black; background-color: #ddd; padding: 0 10px 10px 10px;"></div>`;
     if (details.description != null) {document.getElementById(`${project}_content`).innerHTML += `<p>Description: ${details.description}</p>`;}
     if (details.nameStatus != null) {document.getElementById(`${project}_content`).innerHTML += `<p>Name Status: ${getStatusDescription(details.nameStatus)}</p>`;}
     let addDiv = ``;
