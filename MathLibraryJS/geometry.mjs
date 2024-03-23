@@ -27,7 +27,7 @@ export class Line {
 }
 export class Side extends Line {
   constructor(inputs) {super(inputs)}
-  update() {super()}
+  update() {super.update()}
 }
 export class Polygon {
   constructor(inputs) {
@@ -41,7 +41,7 @@ export class Polygon {
   }
   update() {
     this.sides.forEach((side) => {side.updateSide();});
-    for (let i = 0; i < this.sides.length; i++) {this.pts[i].angle = Math.abs(this.sides[i].lSlope - (this.sides[i+1].lSlope || this.sides[0].lSlope))}
+    for (let i = 0; i < this.sides.length; i++) {this.pts[i].angle = Math.abs(this.sides[i].lSlope - (this.sides[i+1].lSlope || this.sides[0].lSlope));}
     this.perimeter = this.sides.reduce((acc, side) => acc + side.lLength, 0);
   }
   dialate(inputs) {
@@ -71,13 +71,9 @@ export class Polygon {
   }
 }
 export class Triangle extends Polygon {
-  constructor(inputs) {
-    if (inputs.pts.length == 3) {super(inputs);} else {
-      throw new Error("Invalid number of points for a triangle");
-    }
-  }
+  constructor(inputs) {if (inputs.pts.length == 3) {super(inputs)} else {throw new Error("Invalid number of points for a triangle")}}
   update() {
-    super();
+    super.update();
     this.sideType = (this.sides[0].lLength == this.sides[1].lLength && this.sides[0].lLength == this.sides[2].lLength)?"Equilateral":((this.sides[0].lLength == this.sides[1].lLength || this.sides[0].lLength == this.sides[2].lLength || this.sides[1].lLength == this.sides[2].lLength)?"Isosceles":"Scalene");
     this.angleType = (Math.max(this.pts[0].angle, this.pts[1].angle, this.pts[2].angle) < 90)?"Acute":((Math.max(this.pts[0].angle, this.pts[1].angle, this.pts[2].angle) === 90)?"Right":"Obtuse");
     this.area = Math.sqrt(this.perimeter/2 * (this.perimeter/2 - this.sides[0].lLength) * (this.perimeter/2 - this.sides[1].lLength) * (this.perimeter/2 - this.sides[2].lLength));
@@ -87,42 +83,26 @@ export class Triangle extends Polygon {
     this.inradius = 2 * this.area / this.perimeter;
     this.circumradius = (this.sides[0].lLength * this.sides[1].lLength * this.sides[2].lLength) / Math.sqrt((this.sides[0].lLength + this.sides[1].lLength + this.sides[2].lLength) * (this.sides[0].lLength + this.sides[1].lLength - this.sides[2].lLength) * (this.sides[0].lLength - this.sides[1].lLength + this.sides[2].lLength) * (this.sides[1].lLength - this.sides[0].lLength + this.sides[2].lLength));
   }
-  dialate(inputs) {super(inputs)}
-  rotate(inputs) {super(inputs)}
-  translate(inputs) {super(inputs)}
+  dialate(inputs) {super.dialate(inputs)}
+  rotate(inputs) {super.rotate(inputs)}
+  translate(inputs) {super.translate(inputs)}
 }
 export class Quadrilateral extends Polygon {
-  constructor(inputs) {
-    if (inputs.pts.length == 4) {super(inputs)} else {
-      throw new Error("Invalid number of points for a quadrilateral");
-    }
-  }
+  constructor(inputs) {if (inputs.pts.length == 4) {super(inputs)} else {throw new Error("Invalid number of points for a quadrilateral")}}
   update() {
-    super();
+    super.update();
     if (this.sides[0].lSlope == this.sides[2].lSlope || this.sides[1].lSlope == this.sides[3].lSlope) {
       if (this.sides[0].lSlope == this.sides[2].lSlope && this.sides[1].lSlope == this.sides[3].lSlope) {
         if (this.sides[0].lLength == this.sides[1].lLength && this.sides[0].lLength == this.sides[2].lLength && this.sides[0].lLength == this.sides[3].lLength) {
-          if (this.pts[0].angle == this.pts[1].angle && this.pts[0].angle == this.pts[2].angle && this.pts[0].angle == this.pts[3].angle && this.pts[0].angle == Math.PI/2) {
-            this.type = "Square";
-          } else {
-            this.type = "Rhombus";
-          }
-        } else if (this.pts[0].angle == this.pts[1].angle && this.pts[0].angle == this.pts[2].angle && this.pts[0].angle == this.pts[3].angle && this.pts[0].angle == Math.PI/2) {
-          this.type = "Rectangle";
-        } else {
-          this.type = "Parallelogram";
-        }
-      } else {
-        this.type = "Trapezoid";
-      }
-    } else {
-      this.type = "Quadrilateral";
-    }
+          if (this.pts[0].angle == this.pts[1].angle && this.pts[0].angle == this.pts[2].angle && this.pts[0].angle == this.pts[3].angle && this.pts[0].angle == Math.PI/2) {this.type = "Square"} else {this.type = "Rhombus"}
+        } else if (this.pts[0].angle == this.pts[1].angle && this.pts[0].angle == this.pts[2].angle && this.pts[0].angle == this.pts[3].angle && this.pts[0].angle == Math.PI/2) {this.type = "Rectangle"} else {this.type = "Parallelogram"}
+      } else {this.type = "Trapezoid"}
+    } else {this.type = "Quadrilateral"}
     this.area = Math.sqrt((this.perimeter/2 - this.sides[0].lLength) * (this.perimeter/2 - this.sides[1].lLength) * (this.perimeter/2 - this.sides[2].lLength) * (this.perimeter/2 - this.sides[3].lLength));
   }
-  dialate(inputs) {super(inputs)}
-  rotate(inputs) {super(inputs)}
-  translate(inputs) {super(inputs)}
+  dialate(inputs) {super.dialate(inputs)}
+  rotate(inputs) {super.rotate(inputs)}
+  translate(inputs) {super.translate(inputs)}
 }
 export class Vector {
   constructor(inputs) {
@@ -157,10 +137,6 @@ export class Vector {
     this.j /= number;
     this.update();
   }
-  dotProduct(vector) {
-    return this.i * vector.i + this.j * vector.j;
-  }
-  crossProduct(vector) {
-    return this.vMagnitude * vector.vMagnitude * Math.sin(Math.abs(this.vAngle - vector.vAngle));
-  }
+  dotProduct(vector) {return this.i * vector.i + this.j * vector.j}
+  crossProduct(vector) {return this.vMagnitude * vector.vMagnitude * Math.sin(Math.abs(this.vAngle - vector.vAngle))}
 }
