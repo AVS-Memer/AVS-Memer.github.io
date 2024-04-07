@@ -1,7 +1,7 @@
 let Data; let DataPromise;
 function fetchData() {
   if (!DataPromise) {
-    DataPromise = fetch("Data/Productions/projects.json").then(response => {
+    DataPromise = fetch("/Data/Productions/projects.json").then(response => {
         if (!response.ok) {throw new Error('Failed to fetch data');}
         return response.json();
       }).then(data => {Data = data; return Data;}).catch(error => {
