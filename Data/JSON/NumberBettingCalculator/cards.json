@@ -1,0 +1,98 @@
+[
+  {
+    "name": "100",
+    "type": "Threshold",
+    "rarity": "Common",
+    "value": 100
+  },
+  {
+    "name": "200",
+    "type": "Threshold",
+    "rarity": "Common",
+    "value": 200
+  },
+  {
+    "name": "300",
+    "type": "Threshold",
+    "rarity": "Common+",
+    "value": 300
+  },
+  {
+    "name": "3% Range",
+    "type": "Percentage",
+    "rarity": "Common+",
+    "value": 0.03
+  },
+  {
+    "name": "500",
+    "type": "Threshold",
+    "rarity": "Uncommon",
+    "value": 500
+  },
+  {
+    "name": "5% Range",
+    "type": "Percentage",
+    "rarity": "Uncommon",
+    "value": 0.05
+  },
+  {
+    "name": "Quintuple",
+    "type": "Number",
+    "rarity": "Rare",
+    "value": "numbers divisible by 5"
+  },
+  {
+    "name": "K",
+    "type": "Threshold",
+    "rarity": "Rare",
+    "value": 1000
+  },
+  {
+    "name": "12.5% Range",
+    "type": "Percentage",
+    "rarity": "Rare",
+    "value": 100
+  },
+  {
+    "name": "Quadruple",
+    "type": "Number",
+    "rarity": "Rare",
+    "value": "numbers divisible by 4"
+  },
+  {
+    "name": "15% Range",
+    "type": "Percentage",
+    "rarity": "Rare+",
+    "value": 0.15
+  },
+  {
+    "name": "Triple",
+    "type": "Number",
+    "rarity": "Rare+",
+    "value": "numbers divisible by 4"
+  },
+  {
+    "name": "Repeat",
+    "type": "Number",
+    "rarity": "Epic",
+    "value": "numbers with repeating digits"
+  },
+  {
+    "name": "Odd",
+    "type": "Number",
+    "rarity": "Epic",
+    "value": "odd numbers"
+  },
+  {
+    "name": "Even",
+    "type": "Number",
+    "rarity": "Epic",
+    "value": "even numbers"
+  },
+  {
+    "name": "Remainder",
+    "type": "Number",
+    "rarity": "Epic+",
+    "value": "numbers with remainders when divided by 3"
+  }
+]
