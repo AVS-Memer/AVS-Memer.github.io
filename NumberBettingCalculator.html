@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="/Data/Stylesheets/style.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <table id="background">
+      <tbody>
+        <tr>
+          <td id="p1-card-1">
+            <p>Card 1:</p>
+            <p></p>
+            <input type="text" maxlength=11>
+          </td>
+          <td colspan=2>
+            <p class="heading">Top Player</p>
+          </td>
+          <td id="p1-card-2">
+            <p>Card 2:</p>
+            <p></p>
+            <input type="text" maxlength=11>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan=2></td>
+          <td id="t-box" rowspan=2 colspan=2>
+            <button onclick="findThreshold()">Find the Threshold</button>
+            <p>Threshold: </p>
+            <div id="t-box-inner"></div>
+          </td>
+          <td rowspan=2></td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td id="p2-card-1">
+            <p>Card 1:</p>
+            <p></p>
+            <input type="text" maxlength=11>
+          </td>
+          <td colspan=2>
+            <p class="heading">Bottom Player</p>
+          </td>
+          <td id="p2-card-2">
+            <p>Card 2:</p>
+            <p></p>
+            <input type="text" maxlength=11>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="/Scripts/script.js"></script>
+  </body>
+</html>
