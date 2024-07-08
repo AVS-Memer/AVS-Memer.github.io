@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Number Betting Calculator | The AVS Site</title>
-    <link href="Data/Images/Icons/AVS.jpeg" rel="icon" type="image/x-icon">
-    <link href="/Data/Stylesheets/NumberBettingCalculator.css" rel="stylesheet" type="text/css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
     <table id="background">
@@ -15,6 +16,7 @@
             <input type="text" maxlength=11>
           </td>
           <td colspan=2>
+            <h1>Number Betting Game Calculator</h1>
             <p class="heading">Top Player</p>
             <p><a href="/" style="font-style: none">Home</a></p>
           </td>
@@ -25,13 +27,18 @@
           </td>
         </tr>
         <tr>
-          <td rowspan=2></td>
+          <td id="dice" rowspan=2>
+            <p>10 Sided Dice</p>
+            <button onclick="switchDice()">Change to 6 Sided Dice</button>
+          </td>
           <td id="t-box" rowspan=2 colspan=2>
             <button onclick="findThreshold()">Find the Threshold</button>
             <p>Threshold: </p>
             <div id="t-box-inner"></div>
           </td>
-          <td rowspan=2></td>
+          <td id="error" rowspan=2>
+            <p></p>
+          </td>
         </tr>
         <tr></tr>
         <tr>
@@ -53,17 +60,25 @@
     </table>
     <script>
       let cards = [];
-      fetch("/Data/JSON/NumberBettingCalculator/cards.json")
+      let dice = 10;
+      fetch("/cards.json")
         .then(res => {return res.json()})
         .then(data => data.forEach(card => cards.push(card)))
         .catch(err => console.log(err));
       const cardsUsed = [document.getElementById("p1-card-1"), document.getElementById("p1-card-2"), document.getElementById("p2-card-1"), document.getElementById("p2-card-2")];
+
+      const switchDice = () => {
+        document.querySelector("#dice button").innerText = `Change to ${dice} Sided Dice`;
+        dice = (dice === 10) ? 6 : 10;
+        document.querySelector("#dice p").innerText = `${dice} Sided Dice`;
+      }
+
       const findThreshold = () => {
         if (cards == []) {
           return;
         }
         let cardInputs = [];
-        let threshold = 5000;
+        let threshold = Math.pow(dice,4)/2;
         let error;
         document.getElementById("t-box-inner").innerHTML = "";
         cardsUsed.forEach((box, index) => {
@@ -132,10 +147,9 @@
             switch (card.type) {
               case "Threshold":
                 threshold += card.value * (1-Math.floor(index/2)*2);
-                console.log(index, card.value, 1-Math.floor(index/2)*2, threshold);
                 break;
               case "Percentage":
-                threshold += card.value * 10000 * (1-Math.floor(index/2)*2);
+                threshold += card.value * Math.pow(dice,4) * (1-Math.floor(index/2)*2);
                 break;
               case "Number":
                 // checking for repeat number cards
@@ -150,7 +164,9 @@
             box.style.backgroundColor = "black";
           } else {
             box.style.backgroundColor = "red";
-            console.log("Invalid Input");
+            document.querySelector("#t-box p").innerText = "Threshold: ";
+            document.querySelector("#error p").innerText = `Invalid Input\n${(index<2)?"Top":"Bottom"} Player\nCard ${(index%2+1)}`;
+            document.getElementById("error").style.backgroundColor = "red";
             error = true;
             return;
           }
@@ -158,6 +174,17 @@
         if (error) {
           return;
         }
+        if (threshold <= 0 || threshold >= Math.pow(dice,4)) {
+          document.querySelector("#t-box p").innerText = "Threshold: ";
+          document.querySelector("#error p").innerText = "Threshold is not allowed to be out of range";
+          document.getElementById("error").style.backgroundColor = "red";
+          return;
+        }
+        if (dice === 6) {
+          threshold = Math.round(threshold).toString(6);
+        }
+        document.querySelector("#error p").innerText = "";
+        document.getElementById("error").style.backgroundColor = "black";
         document.querySelector("#t-box p").innerText = "Threshold: " + threshold;
       }
     </script>
