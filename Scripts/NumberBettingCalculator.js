@@ -1,6 +1,6 @@
 let cards = [];
       let dice = 10;
-      fetch("/cards.json")
+      fetch("/Data/JSON/NumberBettingCalculator/cards.json")
         .then(res => {return res.json()})
         .then(data => data.forEach(card => cards.push(card)))
         .catch(err => console.log(err));
