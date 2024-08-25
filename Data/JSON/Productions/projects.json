@@ -131,6 +131,24 @@
       ],
       "nameStatus": 1
     },
+    "The O-Block": {
+      "color": "#9fe1e7",
+      "description": "A story where a group of kids have to stop a villan from using a block to destroy the world.",
+      "drive_link": "https://drive.google.com/drive/folders/1yvSHofgH1kc65aQ4cfncYFGnZPC9aJgR?usp=drive_link",
+      "files": [
+        {
+          "drive_link": "https://docs.google.com/document/d/1MHqsdDGTvpIY9uOF-WOgBfUvPnSRjP6T3-uMsLOI4Eo/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The O-Block Info"
+        },
+        {
+          "drive_link": "https://docs.google.com/document/d/1BxzhpXHesy7UPyI3P0xaKl7sr9-GiooVmJonPAxK-j4/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The O-Block Story"
+        }
+      ],
+      "nameStatus": 1
+    },
     "The Pirate Thing": {
       "color": "#f83a22",
       "description": "A story where a group of kids become pirates and go on a quest to get stronger than the pirates that overran their village.",
@@ -145,6 +163,19 @@
           "drive_link": "https://docs.google.com/document/d/1y2Ez0GipFd0BowvRqhH_nJMQ1-9ZuzY1LI-NKgnPz1g/edit?usp=drive_link",
           "fileType": "Google Docs",
           "title": "The Pirate Thing Story"
+        }
+      ],
+      "nameStatus": 1
+    },
+    "The Prison Thing": {
+      "color": "#cabdbf",
+      "description": "A story where a group of kids have to escape a weird prison.",
+      "drive_link": "https://drive.google.com/drive/folders/1R734kTu-KXAb1DFzp4fUgCiWAvWVs9-6?usp=drive_link",
+      "files": [
+        {
+          "drive_link": "https://docs.google.com/document/d/1lvFjdoGICweLTqFClwCcGfAgsOXv0_s7rxXqhpR0y3A/edit?usp=drive_link",
+          "fileType": "Google Docs",
+          "title": "The Prison Thing Info"
         }
       ],
       "nameStatus": 1
