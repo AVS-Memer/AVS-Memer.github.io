@@ -1,5 +1,5 @@
 let brainrot = {};
-fetch("/Data/JSON/NumberBettingCalculator/brainrot.json")
+fetch("/Data/JSON/BrainrotGenerator/brainrot.json")
   .then(res => {return res.json()})
   .then(data => Object.keys(data).forEach(type => brainrot[type] = data[type]))
   .catch(err => console.log(err));
