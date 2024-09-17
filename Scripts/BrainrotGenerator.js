@@ -9,7 +9,7 @@ let brainrotRandomType = (t) => {
 }
 let randomize = () => {
   if (Math.random() < 0.05) {
-    document.querySelector("p").innerText = document.querySelector("p").innerText + "Look behind you\n";
+    document.getElementById("sentences").innerText = document.getElementById("sentences").innerText + "Look behind you\n";
     document.querySelector("button").hidden = true;
   } else {
     let chosenBrainrot = {
@@ -22,7 +22,7 @@ let randomize = () => {
     if (["a", "e", "i", "o", "u"].includes(chosenBrainrot.adj[0].toLowerCase())) {
       string = "An" + string.slice(1);
     }
-    document.querySelector("p").innerText = document.querySelector("p").innerText + string + "\n";
+    document.getElementById("sentences").innerText = document.getElementById("sentences").innerText + string + "\n";
   }
 }
 randomize();
