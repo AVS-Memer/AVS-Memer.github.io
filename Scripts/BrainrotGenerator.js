@@ -10,7 +10,7 @@ let randomize = () => {
   if (Math.random() < 0.02) {
     document.getElementById("sentences").innerText = document.getElementById("sentences").innerText + "Look behind you\n";
     document.querySelector("button").onclick = window.location.reload();
-    document.querySelector("button").innerText = "Uh oh, he found you. Retry"
+    document.querySelector("button").innerText = "Uh oh, he found you.\nRetry"
   } else {
     let chosenBrainrot = {
       "adj": brainrotRandomType("adj"),
