@@ -3,14 +3,14 @@ fetch("/Data/JSON/BrainrotGenerator/brainrot.json")
   .then(res => {return res.json()})
   .then(data => Object.keys(data).forEach(type => brainrot[type] = data[type]))
   .catch(err => console.log(err));
-console.log(brainrot);
 let brainrotRandomType = (t) => {
   return brainrot[t][Math.floor(Math.random()*brainrot[t].length)];
 }
 let randomize = () => {
-  if (Math.random() < 0.05) {
+  if (Math.random() < 0.02) {
     document.getElementById("sentences").innerText = document.getElementById("sentences").innerText + "Look behind you\n";
-    document.querySelector("button").hidden = true;
+    document.querySelector("button").onclick = window.location.reload();
+    document.querySelector("button").innerText = "Uh oh, he found you. Retry"
   } else {
     let chosenBrainrot = {
       "adj": brainrotRandomType("adj"),
