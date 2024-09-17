@@ -12,13 +12,13 @@ let randomize = () => {
     document.querySelector("button").onclick = window.location.reload();
     document.querySelector("button").innerText = "Uh oh, he found you.\nRetry"
   } else {
-    let chosenBrainrot = {
+    chosenBrainrot = {
       "adj": brainrotRandomType("adj"),
       "person": brainrotRandomType("person"),
       "verbPt": brainrotRandomType("verb-pt"),
       "place": brainrotRandomType("place")
     }
-    let string = "A " + chosenBrainrot.adj + " " + chosenBrainrot.person + " " + chosenBrainrot.verbPt + " in " + chosenBrainrot.place + ".";
+    string = "A " + chosenBrainrot.adj + " " + chosenBrainrot.person + " " + chosenBrainrot.verbPt + " in " + chosenBrainrot.place + ".";
     if (["a", "e", "i", "o", "u"].includes(chosenBrainrot.adj[0].toLowerCase())) {
       string = "An" + string.slice(1);
     }
