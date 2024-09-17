@@ -1,11 +1,8 @@
-let brainrot = {
-  "noun": ["sigma", "tax", "rizz", "gyatt"],
-  "person": ["Rizzler", "Blue Tie", "Group Leader", "Quandale Dingle", "Turkish Quandale Dingle", "Kai Cenat", "Sigma", "Drake"],
-  "place": ["Ohio", "the Gooning Cave", "the TikTok Rizz Party"],
-  "verb": ["mew", "edge", "jelq", "goon", "looksmaxx", "jelqmaxx", "lose their streak"],
-  "verb-pt": ["mewed", "edged", "jelqed", "gooned", "looksmaxxed", "jelqmaxxed", "lost their streak"],
-  "adj": ["Skibidi", "Sigma", "Fat", "Fanum", "Level 1000 Gyatt", "Alpha", "Beta", "Negative Aura"]
-};
+let brainrot = {};
+fetch("/Data/JSON/NumberBettingCalculator/brainrot.json")
+  .then(res => {return res.json()})
+  .then(data => Object.keys(data).forEach(type => brainrot[type] = data[type]))
+  .catch(err => console.log(err));
 let brainrotRandomType = (t) => {
   return brainrot[t][Math.floor(Math.random()*brainrot[t].length)];
 }
