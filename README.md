@@ -1,2 +1,2 @@
 # Hello, This is the AVS Site
-This is AVS' website where they've posted their games, tools, and more!
+This is AVS' public website where they've posted games, tools, and more!
