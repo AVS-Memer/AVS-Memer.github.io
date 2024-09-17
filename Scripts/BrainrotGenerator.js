@@ -4,7 +4,7 @@ let brainrot = {
   "place": ["Ohio", "the Gooning Cave", "the TikTok Rizz Party"],
   "verb": ["mew", "edge", "jelq", "goon", "looksmaxx", "jelqmaxx", "lose their streak"],
   "verb-pt": ["mewed", "edged", "jelqed", "gooned", "looksmaxxed", "jelqmaxxed", "lost their streak"],
-  "adj": ["Skibidi", "Sigma", "Fat", "Fanum", "Level 1000 Gyatt", "Alpha", "Beta"]
+  "adj": ["Skibidi", "Sigma", "Fat", "Fanum", "Level 1000 Gyatt", "Alpha", "Beta", "Negative Aura"]
 };
 let brainrotRandomType = (t) => {
   return brainrot[t][Math.floor(Math.random()*brainrot[t].length)];
