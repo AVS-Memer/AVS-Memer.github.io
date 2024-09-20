@@ -10,8 +10,8 @@ let randomize = () => {
   if (Math.random() < 0.02) {
     document.getElementById("sentences").innerText = document.getElementById("sentences").innerText + "Look behind you\n";
     document.querySelector("button").onclick = window.location.reload();
-    document.querySelector("button").innerText = "Uh oh, he found you.\nRetry"
-  } else {
+    document.querySelector("button").innerText = "Uh oh, he found you.\nRetry";
+  } else if (Math.random() < 0.5) {
     chosenBrainrot = {
       "adj": brainrotRandomType("adj"),
       "person": brainrotRandomType("person"),
@@ -19,6 +19,22 @@ let randomize = () => {
       "place": brainrotRandomType("place")
     }
     string = "A " + chosenBrainrot.adj + " " + chosenBrainrot.person + " " + chosenBrainrot.verbPt + " in " + chosenBrainrot.place + ".";
+    if (["a", "e", "i", "o", "u"].includes(chosenBrainrot.adj[0].toLowerCase())) {
+      string = "An" + string.slice(1);
+    }
+    document.getElementById("sentences").innerText = document.getElementById("sentences").innerText + string + "\n";
+  } else {
+    chosenBrainrot = {
+      "adj": brainrotRandomType("adj"),
+      "person1": brainrotRandomType("person"),
+      "verbPt": brainrotRandomType("verb-pt"),
+      "person2": brainrotRandomType("person"),
+      "place": brainrotRandomType("place")
+    }
+    if (chosenBrainrot.person1 == chosenPerson.person2) {
+      chosenBrainrot.person2 = "themself";
+    }
+    string = "A " + chosenBrainrot.adj + " " + chosenBrainrot.person1 + " " + chosenBrainrot.verbPt + " " + chosenBrainrot.person2 + " in " + chosenBrainrot.place + ".";
     if (["a", "e", "i", "o", "u"].includes(chosenBrainrot.adj[0].toLowerCase())) {
       string = "An" + string.slice(1);
     }
