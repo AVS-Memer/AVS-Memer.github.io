@@ -31,9 +31,9 @@ let randomize = () => {
       "person2": brainrotRandomType("person"),
       "place": brainrotRandomType("place")
     }
-    if (brainrot["verb-pt"].slice(0,2).includes(chosenBrainrot.verbPt)) {
+    if (brainrot["verb-pt"].slice(0,3).includes(chosenBrainrot.verbPt)) {
       chosenBrainrot.verbPt += " with";
-    } else if (brainrot["verb-pt"].slice(2,7).includes(chosenBrainrot.verbPt)) {
+    } else if (brainrot["verb-pt"].slice(3,7).includes(chosenBrainrot.verbPt)) {
       chosenBrainrot.verbPt += " on";
     }
     if (chosenBrainrot.person1 == chosenBrainrot.person2) {
