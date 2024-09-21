@@ -7,7 +7,7 @@ let brainrotRandomType = (t) => {
   return brainrot[t][Math.floor(Math.random()*brainrot[t].length)];
 }
 let randomize = () => {
-  if (Math.random() < 0.02) {
+  if (Math.random() < 0.2) {
     document.getElementById("sentences").innerText = document.getElementById("sentences").innerText + "Look behind you\n";
     setTimeout(() => {
       document.querySelector("button").innerText = "Uh oh, he found you.\nRetry";
