@@ -9,10 +9,8 @@ let brainrotRandomType = (t) => {
 let randomize = () => {
   if (Math.random() < 0.2) {
     document.getElementById("sentences").innerText = document.getElementById("sentences").innerText + "Look behind you\n";
-    setTimeout(() => {
-      document.querySelector("button").innerText = "Uh oh, he found you.\nRetry";
-      document.querySelector("button").onclick = window.location.reload();
-    }, 100);
+    document.querySelector("button").innerText = "Uh oh, he found you.\nRetry";
+    document.querySelector("button").onclick = () => {window.location.reload()}
   } else if (Math.random() < 0.5) {
     chosenBrainrot = {
       "adj": brainrotRandomType("adj"),
