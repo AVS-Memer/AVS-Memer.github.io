@@ -31,7 +31,7 @@ let randomize = () => {
       "person2": brainrotRandomType("person"),
       "place": brainrotRandomType("place")
     }
-    if (chosenBrainrot.person1 == chosenPerson.person2) {
+    if (chosenBrainrot.person1 == chosenBrainrot.person2) {
       chosenBrainrot.person2 = "themself";
     }
     string = "A " + chosenBrainrot.adj + " " + chosenBrainrot.person1 + " " + chosenBrainrot.verbPt + " " + chosenBrainrot.person2 + " in " + chosenBrainrot.place + ".";
