@@ -1,7 +1,7 @@
 let brainrot = {};
 fetch("/Data/JSON/BrainrotGenerator/brainrot.json")
   .then(res => {return res.json()})
-  .then(data => Object.keys(data).forEach(type => brainrot[type] = data[type]))
+  .then(data => Object.keys(data.normal).forEach(type => brainrot[type] = data.normal[type]))
   .catch(err => console.log(err));
 let brainrotRandomType = (t) => {
   return brainrot[t][Math.floor(Math.random()*brainrot[t].length)];
