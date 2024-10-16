@@ -39,9 +39,9 @@ let randomize = () => {
     if (chosenBrainrot.person1 == chosenBrainrot.person2) {
       chosenBrainrot.person2 = "themself";
     }
-    if (brainrot.person.slice(0,4).includes(chosenBrainrot.person2)) {
+    if (brainrot.person.slice(0,5).includes(chosenBrainrot.person2)) {
       chosenBrainrot.person2 = "the " + chosenBrainrot.person2;
-    } else if (brainrot.person.slice(4,6).includes(chosenBrainrot.person2)) {
+    } else if (brainrot.person.slice(5,7).includes(chosenBrainrot.person2)) {
       chosenBrainrot.person2 = "a " + chosenBrainrot.person2;
     }
     string = "A " + chosenBrainrot.adj + " " + chosenBrainrot.person1 + " " + chosenBrainrot.verbPt + " " + chosenBrainrot.person2 + " in " + chosenBrainrot.place + ".";
