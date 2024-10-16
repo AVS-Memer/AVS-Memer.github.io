@@ -33,15 +33,15 @@ let randomize = () => {
     }
     if (brainrot["verb-pt"].slice(0,4).includes(chosenBrainrot.verbPt)) {
       chosenBrainrot.verbPt += " with";
-    } else if (brainrot["verb-pt"].slice(4,8).includes(chosenBrainrot.verbPt)) {
+    } else if (brainrot["verb-pt"].slice(4,9).includes(chosenBrainrot.verbPt)) {
       chosenBrainrot.verbPt += " on";
     }
     if (chosenBrainrot.person1 == chosenBrainrot.person2) {
       chosenBrainrot.person2 = "themself";
     }
-    if (brainrot.person.slice(0,4).includes(chosenBrainrot.person2)) {
+    if (brainrot.person.slice(0,5).includes(chosenBrainrot.person2)) {
       chosenBrainrot.person2 = "the " + chosenBrainrot.person2;
-    } else if (brainrot.person.slice(4,6).includes(chosenBrainrot.person2)) {
+    } else if (brainrot.person.slice(5,7).includes(chosenBrainrot.person2)) {
       chosenBrainrot.person2 = "a " + chosenBrainrot.person2;
     }
     string = "A " + chosenBrainrot.adj + " " + chosenBrainrot.person1 + " " + chosenBrainrot.verbPt + " " + chosenBrainrot.person2 + " in " + chosenBrainrot.place + ".";
