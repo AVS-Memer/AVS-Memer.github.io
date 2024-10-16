@@ -7,11 +7,7 @@ let brainrotRandomType = (t) => {
   return brainrot[t][Math.floor(Math.random()*brainrot[t].length)];
 }
 let randomize = () => {
-  if (Math.random() < 0.02) {
-    document.getElementById("sentences").innerText = document.getElementById("sentences").innerText + "Look behind you\n";
-    document.querySelector("button").innerText = "Uh oh, he found you.\nRetry";
-    document.querySelector("button").onclick = () => {window.location.reload()}
-  } else if (Math.random() < 0.5) {
+  if (Math.random() < 0.5) {
     chosenBrainrot = {
       "adj": brainrotRandomType("adj"),
       "person": brainrotRandomType("person"),
