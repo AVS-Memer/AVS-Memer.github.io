@@ -1,0 +1,312 @@
+{
+  "tense": {
+    "present_indicative": {
+      "endings": {
+        "ar": {
+          "yo": "o",
+          "tú": "as",
+          "él/ella/usted": "a",
+          "nosotros": "amos",
+          "vosotros": "áis",
+          "ellos/ellas/ustedes": "an"
+        },
+        "er": {
+          "yo": "o",
+          "tú": "es",
+          "él/ella/usted": "e",
+          "nosotros": "emos",
+          "vosotros": "éis",
+          "ellos/ellas/ustedes": "en"
+        },
+        "ir": {
+          "yo": "o",
+          "tú": "es",
+          "él/ella/usted": "e",
+          "nosotros": "imos",
+          "vosotros": "ís",
+          "ellos/ellas/ustedes": "en"
+        },
+        "ír": {
+          "yo": "o",
+          "tú": "es",
+          "él/ella/usted": "e",
+          "nosotros": "ímos",
+          "vosotros": "ís",
+          "ellos/ellas/ustedes": "en"
+        }
+      },
+      "irregular_yo_verbs": {
+        "go": {
+          "caer": "caigo",
+          "decir": "digo",
+          "hacer": "hago",
+          "poner": "pongo",
+          "salir": "salgo",
+          "tener": "tengo",
+          "traer": "trago",
+          "venir": "vengo"
+        },
+        "zco": {
+          "conducir": "conduzco",
+          "conocer": "conozco",
+          "obedecer": "obedezco",
+          "producir": "produzco",
+          "traducir": "traduzco"
+        },
+        "other": {
+          "conseguir": "consigo",
+          "saber": "sé",
+          "seguir": "sigo"
+        }
+      },
+      "irregulars": {
+        "dar": {
+          "yo": "doy",
+          "tú": "das",
+          "él/ella/usted": "da",
+          "nosotros": "damos",
+          "vosotros": "dais",
+          "ellos/ellas/ustedes": "dan"
+        },
+        "estar": {
+          "yo": "estoy",
+          "tú": "estás",
+          "él/ella/usted": "está",
+          "nosotros": "estamos",
+          "vosotros": "estáis",
+          "ellos/ellas/ustedes": "están"
+        },
+        "haber": {
+          "yo": "he",
+          "tú": "has",
+          "él/ella/usted": "ha",
+          "nosotros": "habemos",
+          "vosotros": "habéis",
+          "ellos/ellas/ustedes": "han"
+        },
+        "ir": {
+          "yo": "voy",
+          "tú": "vas",
+          "él/ella/usted": "va",
+          "nosotros": "vamos",
+          "vosotros": "vais",
+          "ellos/ellas/ustedes": "van"
+        },
+        "oír": {
+          "yo": "oigo",
+          "tú": "oyes",
+          "él/ella/usted": "oye",
+          "nosotros": "oímos",
+          "vosotros": "oís",
+          "ellos/ellas/ustedes": "oyen"
+        },
+        "ser": {
+          "yo": "soy",
+          "tú": "eres",
+          "él/ella/usted": "es",
+          "nosotros": "somos",
+          "vosotros": "sois",
+          "ellos/ellas/ustedes": "son"
+        }
+      },
+      "stem_changes": {
+        "e_i": {
+          "decir": "dic",
+          "pedir": "pid",
+          "reír": "rí",
+          "repetir": "repit",
+          "seguir": "sigu",
+          "servir": "sirv",
+          "sonreír": "sonrí",
+          "vestir": "vist"
+        },
+        "e_ie": {
+          "cerrar": "cierr",
+          "comenzar": "comienz",
+          "despertar": "despiert",
+          "divertir": "diviert",
+          "empezar": "empiez",
+          "entender": "entiend",
+          "mentir": "mient",
+          "pensar": "piens",
+          "perder": "pierd",
+          "preferir": "prefier",
+          "querer": "quier",
+          "sentar": "sient"
+        },
+        "i_ie": {
+          "adquirir": "adquier",
+          "inquirir": "inquier"
+        },
+        "o_ue": {
+          "almorzar": "almuerz",
+          "dormir": "duerm",
+          "encontrar": "encuentr",
+          "morir": "muer",
+          "morder": "muerd",
+          "mostrar": "muestr",
+          "soñar": "seuñ",
+          "volver": "vuelv"
+        },
+        "u_ue": {
+          "jugar": "jueg"
+        }
+      }
+    },
+    "preterite_indicative": {
+      "endings": {
+        "ar": {
+          "yo": "é",
+          "tú": "aste",
+          "él/ella/usted": "ó",
+          "nosotros": "amos",
+          "vosotros": "ásteis",
+          "ellos/ellas/ustedes": "aron"
+        },
+        "er": {
+          "yo": "í",
+          "tú": "iste",
+          "él/ella/usted": "ió",
+          "nosotros": "imos",
+          "vosotros": "ísteis",
+          "ellos/ellas/ustedes": "ieron"
+        },
+        "ir": {
+          "yo": "í",
+          "tú": "iste",
+          "él/ella/usted": "ió",
+          "nosotros": "imos",
+          "vosotros": "ísteis",
+          "ellos/ellas/ustedes": "ieron"
+        },
+        "irregular": {
+          "yo": "e",
+          "tú": "iste",
+          "él/ella/usted": "o",
+          "nosotros": "imos",
+          "vosotros": "isteis",
+          "ellos/ellas/ustedes": "ieron"
+        },
+        "ír": {
+          "yo": "í",
+          "tú": "íste",
+          "él/ella/usted": "ió",
+          "nosotros": "ímos",
+          "vosotros": "ísteis",
+          "ellos/ellas/ustedes": "ieron"
+        }
+      },
+      "irregulars": {
+        "dar": {
+          "yo": "di",
+          "tú": "diste",
+          "él/ella/usted": "dio",
+          "nosotros": "dimos",
+          "vosotros": "disteis",
+          "ellos/ellas/ustedes": "dieron"
+        },
+        "estar": {
+          "yo": "estoy",
+          "tú": "estás",
+          "él/ella/usted": "está",
+          "nosotros": "estamos",
+          "vosotros": "estáis",
+          "ellos/ellas/ustedes": "están"
+        },
+        "haber": {
+          "yo": "he",
+          "tú": "has",
+          "él/ella/usted": "ha",
+          "nosotros": "habemos",
+          "vosotros": "habéis",
+          "ellos/ellas/ustedes": "han"
+        },
+        "hacer": {
+          "yo": "hice",
+          "tú": "hices",
+          "él/ella/usted": "hizo",
+          "nosotros": "hicimos",
+          "vosotros": "hicisteis",
+          "ellos/ellas/ustedes": "hicieron"
+        },
+        "ir": {
+          "yo": "fui",
+          "tú": "fuiste",
+          "él/ella/usted": "fue",
+          "nosotros": "fuimos",
+          "vosotros": "fuisteis",
+          "ellos/ellas/ustedes": "fueron"
+        },
+        "oír": {
+          "yo": "oigo",
+          "tú": "oyes",
+          "él/ella/usted": "oye",
+          "nosotros": "oímos",
+          "vosotros": "oís",
+          "ellos/ellas/ustedes": "oyen"
+        },
+        "ser": {
+          "yo": "fui",
+          "tú": "fuiste",
+          "él/ella/usted": "fue",
+          "nosotros": "fuimos",
+          "vosotros": "fuisteis",
+          "ellos/ellas/ustedes": "fueron"
+        },
+        "ver": {
+          "yo": "vi",
+          "tú": "viste",
+          "él/ella/usted": "vio",
+          "nosotros": "vimos",
+          "vosotros": "visteis",
+          "ellos/ellas/ustedes": "vieron"
+        }
+      },
+      "stem_changes": {
+        "e_i": {
+          "divertir": "divirt",
+          "mentir": "mint",
+          "pedir": "pid",
+          "preferir": "prefir",
+          "repetir": "repit",
+          "seguir": "sigu",
+          "servir": "sirv",
+          "vestir": "vist"
+        },
+        "i_y": {
+          "caer": "ca",
+          "creer": "cre",
+          "leer": "le",
+          "oír": "o"
+        },
+        "j": {
+          "traer": "traj"
+        },
+        "o_u": {
+          "dormir": "durm",
+          "morir": "mur"
+        },
+        "other": {
+          "andar": "anduv",
+          "caber": "cup",
+          "estar": "estuv",
+          "haber": "hub",
+          "poder": "pud",
+          "poner": "pus",
+          "querer": "quis",
+          "saber": "sup",
+          "tener": "tuv",
+          "venir": "vin"
+        }
+      }
+    }
+  },
+  "reflexive_pronouns": { 
+    "yo": "me",
+    "tú": "te",
+    "él/ella/usted": "se",
+    "nosotros": "nos",
+    "vosotros": "os",
+    "ellos/ellas/ustedes": "se"
+  }
+}
