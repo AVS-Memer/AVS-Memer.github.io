@@ -96,5 +96,13 @@ document.getElementById("conjugate").onclick = () => {
     } else {
       document.getElementById("answer").value = (reflexive?reflexive + " ":"") + stem + ending;
     }
+  } else if (tense == "imperfect indicative") {
+    stem = verb.slice(0,verb.length-2);
+    ending = verbs.tense.imperfect_indicative.endings[verb.slice(verb.length-2)][pov];
+    if (Object.keys(verbs.tense.imperfect_indicative.irregulars).includes(verb)) {
+      document.getElementById("answer").value = (reflexive?reflexive + " ":"") + verbs.tense.imperfect_indicative.irregulars[verb][pov];
+    } else {
+      document.getElementById("answer").value = (reflexive?reflexive + " ":"") + stem + ending;
+    }
   }
 }
