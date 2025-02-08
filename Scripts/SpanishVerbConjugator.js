@@ -10,6 +10,13 @@ Object.keys(verbs.tense.present_indicative.endings.ar).forEach(form => {
   formOption.text = form;
   document.getElementById("pov").appendChild(formOption);
 });
+document.getElementById("msg").onclick = () => {
+  if (document.getElementById("msg").innerText == "More tenses coming soon!") {
+    document.getElementById("msg").innerText = "¡Más tiempos verbales próximamente!";
+  } else {
+    document.getElementById("msg").innerText = "More tenses coming soon!";
+  }
+}
 document.getElementById("conjugate").onclick = () => {
   pov = document.getElementById("pov").value;
   tense = document.getElementById("tense").value;
