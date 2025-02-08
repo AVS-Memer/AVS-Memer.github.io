@@ -1,5 +1,59 @@
 {
   "tense": {
+    "imperfect_indicative": {
+      "endings": {
+        "ar": {
+          "yo": "aba",
+          "tú": "abas",
+          "él/ella/usted": "aba",
+          "nosotros": "ábamos",
+          "vosotros": "abaís",
+          "ellos/ellas/ustedes": "aban"
+        },
+        "er": {
+          "yo": "ía",
+          "tú": "ías",
+          "él/ella/usted": "ía",
+          "nosotros": "íamos",
+          "vosotros": "íais",
+          "ellos/ellas/ustedes": "ían"
+        },
+        "ir": {
+          "yo": "ía",
+          "tú": "ías",
+          "él/ella/usted": "ía",
+          "nosotros": "íamos",
+          "vosotros": "íais",
+          "ellos/ellas/ustedes": "ían"
+        }
+      },
+      "irregulars": {
+        "ir": {
+          "yo": "iba",
+          "tú": "ibas",
+          "él/ella/usted": "iba",
+          "nosotros": "íbamos",
+          "vosotros": "ibais",
+          "ellos/ellas/ustedes": "ian"
+        },
+        "ser": {
+          "yo": "era",
+          "tú": "eras",
+          "él/ella/usted": "era",
+          "nosotros": "éramos",
+          "vosotros": "erais",
+          "ellos/ellas/ustedes": "eran"
+        },
+        "ver": {
+          "yo": "veía",
+          "tú": "veías",
+          "él/ella/usted": "veía",
+          "nosotros": "veíamos",
+          "vosotros": "veíais",
+          "ellos/ellas/ustedes": "veían"
+        }
+      }
+    },
     "present_indicative": {
       "endings": {
         "ar": {
