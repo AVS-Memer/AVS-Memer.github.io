@@ -4,12 +4,6 @@ fetch("/Data/JSON/SpanishVerbConjugator/verbs.json")
   .then(res => {return res.json()})
   .then(data => Object.keys(data).forEach(form => verbs[form] = data[form]))
   .catch(err => console.log(err));
-Object.keys(verbs.tense.present_indicative.endings.ar).forEach(form => {
-  const formOption = document.createElement("option");
-  formOption.value = form;
-  formOption.text = form;
-  document.getElementById("pov").appendChild(formOption);
-});
 document.getElementById("msg").onclick = () => {
   if (document.getElementById("msg").innerText == "More tenses coming soon!") {
     document.getElementById("msg").innerText = "¡Más tiempos verbales próximamente!";
