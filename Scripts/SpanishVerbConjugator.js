@@ -15,6 +15,7 @@ document.getElementById("conjugate").onclick = () => {
   pov = document.getElementById("pov").value;
   tense = document.getElementById("tense").value;
   verb = document.getElementById("verb").value;
+  reflexive = null;
   if (verb.slice(verb.length-2) == "se") {
     verb = verb.slice(0,verb.length-2);
     reflexive = verbs.reflexive_pronouns[pov];
