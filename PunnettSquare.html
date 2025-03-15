@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <link href="square.css" type="stylesheet"></link>
+  </head>
+  <body>
+    <p style="text-align: left"><a href="/" style="color: black; font-style: none; text-decoration: none;">Home</a></p>
+    <h1>Punnett Square</h1>
+    <p>A Punnett Square is a visual tool used in genetics to predict the possible genotypes and phenotypes of offspring from a cross between two parents by showing all possible combinations of alleles.</p>
+    Heterozygous (put all alleles in sorted order): <input id="sort" type="text" placeholder="heterozygous model, order of alleles" value="Aa">
+    <br>
+    Male alleles: <input id="male" type="text" placeholder="male alleles" value="Aa">
+    <br>
+    Female alleles: <input id="female" type="text" placeholder="female alleles" value="Aa">
+    <table>
+      <tbody>
+        <tr>
+          <th>♀♂</th>
+          <th>A</th>
+          <th>a</th>
+        </tr>
+        <tr>
+          <th>A</th>
+          <td>AA</td>
+          <td>Aa</td>
+        </tr>
+        <tr>
+          <th>a</th>
+          <td>Aa</td>
+          <td>aa</td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="fill">Fill in Square</button>
+    <script src="/Scripts/PunnettSquare.js"></script>
+  </body>
+</html>
