@@ -12,7 +12,6 @@ baseInput.onchange = () => {
 };
 
 document.getElementById("findName").onclick = () => {
-  if (baseInput.value > baseInput.max) baseInput.value = baseInput.max;
   if (coeffInput.value > coeffInput.max) coeffInput.value = coeffInput.max;
   if (expInput.value > expInput.max) expInput.value = expInput.max;
   let base = baseInput.value;
