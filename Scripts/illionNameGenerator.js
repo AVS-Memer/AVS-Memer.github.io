@@ -13,7 +13,7 @@ document.getElementById("findName").onclick = () => {
   let exp = document.getElementById("exp").value;
   if (base !== 10) exp *= Math.log10(base);
   exp += Math.log10(coeff);
-  if (exp < 3) console.log(Math.pow(10,exp));
+  if (exp < 3) document.getElementById("name").innerText = Math.pow(10,exp);
   else {
     let n = Math.floor(exp/3)-1;
     if (n < 10) {
