@@ -19,7 +19,7 @@ document.getElementById("findName").onclick = () => {
     if (n < 10) {
       document.getElementById("name").innerText = Math.pow(10,exp-(n+1)*3).toPrecision(3)+" "+basePowers[n-1]+"illion";
     } else {
-      console.log(Math.pow(10,exp-(n+1)*3).toPrecision(3)+" "+onesPowers[n%10]+tensPowers[Math.floor(n/10)%10]+((Math.floor(n/10)%10===1)&&(n>=100)?"i":"")+hundredsPowers[Math.floor(n/100)]+"illion");
+      document.getElementById("name").innerText = Math.pow(10,exp-(n+1)*3).toPrecision(3)+" "+onesPowers[n%10]+tensPowers[Math.floor(n/10)%10]+((Math.floor(n/10)%10===1)&&(n>=100)?"i":"")+hundredsPowers[Math.floor(n/100)]+"illion";
     }
   }
 }
