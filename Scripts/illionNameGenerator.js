@@ -17,6 +17,8 @@ document.getElementById("findName").onclick = () => {
   let base = baseInput.value;
   let coeff = coeffInput.value;
   let exp = expInput.value;
+  if (base === 0) document.getElementById("name").innerText = 0;
+  if (base <= 0) return;
   if (base !== 10) exp *= Math.log10(base);
   exp += Math.log10(coeff);
   if (exp < 3) document.getElementById("name").innerText = Math.pow(10,exp);
