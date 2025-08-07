@@ -10,10 +10,10 @@
   width: 3em;
 }
 
-.exponent-input {
+#exp {
   font-size: 0.8em;
   margin-left: 2px;
   position: relative;
   top: -0.8em;
-  width: 3em;
+  width: 4em;
 }
