@@ -12,11 +12,11 @@ baseInput.onchange = () => {
 };
 
 document.getElementById("findName").onclick = () => {
-  if (coeffInput.value > coeffInput.max) coeffInput.value = coeffInput.max;
-  if (expInput.value > expInput.max) expInput.value = expInput.max;
-  let base = baseInput.value;
-  let coeff = coeffInput.value;
-  let exp = expInput.value;
+  let base = Number(baseInput.value);
+  let coeff = Number(coeffInput.value);
+  let exp = Number(expInput.value);
+  if (coeff > base) coeff = base;
+  if (exp > Number(expInput.max)) exp = Number(expInput.max);
   if (base === 0) document.getElementById("name").innerText = 0;
   if (base <= 0) return;
   if (base !== 10) exp *= Math.log10(base);
