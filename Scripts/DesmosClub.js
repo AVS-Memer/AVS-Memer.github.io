@@ -19,11 +19,11 @@ fetch(url)
     const table = document.getElementById('flex-table');
     table.innerHTML = ''; // Clear loading
     const params = new URLSearchParams(window.location.search);
-    const nameParam = params.get("name").toLowerCase() || '',
-      descriptionParam = params.get("description").toLowerCase() || '',
+    const nameParam = (params.get("name") ?? '').toLowerCase(),
+      descriptionParam = (params.get("description") ?? '').toLowerCase(),
       linkParam = params.get("link") || '',
-      typeParam = params.get("type").toLowerCase() || '',
-      authorParam = params.get("author").toLowerCase() || '';
+      typeParam = (params.get("type") ?? '').toLowerCase(),
+      authorParam = (params.get("author") ?? '').toLowerCase();
     
     rows.forEach(row => {
       const name = row.c[nameIdx]?.v || 'No Name',
