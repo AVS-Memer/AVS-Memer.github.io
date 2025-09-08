@@ -18,42 +18,50 @@ fetch(url)
       authorIdx = 4;
     const table = document.getElementById('flex-table');
     table.innerHTML = ''; // Clear loading
-
+    const params = new URLSearchParams(window.location.search);
+    const nameParam = params.get("name").toLowerCase() || '',
+      descriptionParam = params.get("description").toLowerCase() || '',
+      linkParam = params.get("link") || '',
+      typeParam = params.get("type").toLowerCase() || '',
+      authorParam = params.get("author").toLowerCase() || '';
+    
     rows.forEach(row => {
       const name = row.c[nameIdx]?.v || 'No Name',
         description = row.c[descIdx]?.v || '',
         link = row.c[linkIdx]?.v,
         type = row.c[typeIdx]?.v || 'calculator',
         author = row.c[authorIdx]?.v || 'anonymous';
-      if (!link) return;
 
-      const cell = document.createElement('div');
-      cell.className = 'cell';
-
-      const header = document.createElement('div');
-      header.className = 'cell-header';
-      header.innerHTML = `<h3>${name}</h3><p style='font-size: 12px'>${author}</p><p>${description}</p>`;
-      cell.appendChild(header);
-
-      if (type === "calculator") {
-        const iframe = document.createElement('iframe');
-        iframe.src = `https://desmos.com/${type}/${link}?embed`;
-        iframe.width=500;
-        iframe.height=500;
-        iframe.style.border="1px solid #ccc";
-        cell.appendChild(iframe);
-      } else {
-        const linkElem = document.createElement('a');
-        linkElem.href = link.startsWith('http') ? link : `https://desmos.com/${type}/${link}`;
-        linkElem.target = '_blank';
-        linkElem.rel = 'noopener';
-        linkElem.textContent = `See ${name} on Desmos ${type} »`;
-        linkElem.style.padding = '10px';
-        linkElem.style.display = 'inline-block';
-        cell.appendChild(linkElem);
+      if (link && name.toLowerCase().includes(nameParam) && description.toLowerCase().includes(descriptionParam) && link.includes(linkParam) && type.toLowerCase().includes(typeParam) && author.toLowerCase().includes(authorParam)) {
+        const cell = document.createElement('div');
+        cell.className = 'cell';
+  
+        const header = document.createElement('div');
+        header.className = 'cell-header';
+        header.innerHTML = `<h3>${name}</h3><p style='font-size: 12px'>${author}</p><p>${description}</p>`;
+        cell.appendChild(header);
+  
+        if (type === "calculator") {
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://desmos.com/${type}/${link}?embed`;
+          iframe.width=500;
+          iframe.height=500;
+          iframe.style.border="1px solid #ccc";
+          cell.appendChild(iframe);
+        } else {
+          const linkElem = document.createElement('a');
+          linkElem.href = link.startsWith('http') ? link : `https://desmos.com/${type}/${link}`;
+          linkElem.target = '_blank';
+          linkElem.rel = 'noopener';
+          linkElem.textContent = `See ${name} on Desmos ${type} »`;
+          linkElem.style.padding = '10px';
+          linkElem.style.display = 'inline-block';
+          cell.appendChild(linkElem);
+        }
+        table.appendChild(cell);
       }
-      table.appendChild(cell);
     });
+    if (!table.children.length) table.innerHTML = `<div>No matches were found. Please check parameters.</div>`;
   }).catch(err => {
     document.getElementsByClassName("loading")[0].innerHTML = "Failed to Load Data";
     console.error("FETCH ERROR:", err);
