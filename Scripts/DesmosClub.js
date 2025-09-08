@@ -61,7 +61,7 @@ fetch(url)
         table.appendChild(cell);
       }
     });
-    if (!table.children.length) table.innerHTML = `<div>No matches were found. Please check parameters.</div>`;
+    if (!table.children.length) table.innerHTML = `<div class="loading">No matches were found. Please check parameters.</div>`;
   }).catch(err => {
     document.getElementsByClassName("loading")[0].innerHTML = "Failed to Load Data";
     console.error("FETCH ERROR:", err);
