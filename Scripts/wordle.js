@@ -34,7 +34,7 @@ var pattern = (guess, answer) => {
   return r;
 };
 
-fetch('words.json')
+fetch('/Data/JSON/Wordle/words.json')
   .then(response => response.json())
   .then(words => {
     document.getElementById('find').onclick = () => {
