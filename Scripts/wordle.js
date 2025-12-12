@@ -1,4 +1,4 @@
-import words from "/Data/JSON/Wordle/words.json"
+import words from "/Data/JSON/Wordle/words.json";
 var boxes = document.getElementById('pattern').getElementsByTagName('td');
 var word = document.getElementById('word');
 var colors = ['gray', 'rgb(255,196,37)', 'rgb(1,154,1)'];
