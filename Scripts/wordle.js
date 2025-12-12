@@ -7,6 +7,7 @@ for (let i = 0; i < 6; i++) {
     boxes[5 * i + j].onclick = () => {
       n[i][j] = (n[i][j] + 1) % 3;
       boxes[5 * i + j].style.backgroundColor = colors[n[i][j]];
+      if (boxes[0].innerText !== "") [...boxes].forEach(a => a.innerText = "");
     };
   }
 }
