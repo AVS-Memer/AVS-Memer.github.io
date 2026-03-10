@@ -100,17 +100,9 @@
           "traer": "trago",
           "venir": "vengo"
         },
-        "zco": {
-          "conducir": "conduzco",
-          "conocer": "conozco",
-          "obedecer": "obedezco",
-          "producir": "produzco",
-          "traducir": "traduzco"
-        },
         "other": {
-          "conseguir": "consigo",
-          "saber": "sé",
-          "seguir": "sigo"
+          "caber": "quepo",
+          "saber": "sé"
         }
       },
       "irregulars": {
