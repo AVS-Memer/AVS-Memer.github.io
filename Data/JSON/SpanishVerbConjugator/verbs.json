@@ -98,22 +98,16 @@
           "salir": "salgo",
           "tener": "tengo",
           "traer": "trago",
+          "valer": "valgo",
           "venir": "vengo"
         },
         "other": {
           "caber": "quepo",
+          "dar": "doy",
           "saber": "sé"
         }
       },
       "irregulars": {
-        "dar": {
-          "yo": "doy",
-          "tú": "das",
-          "él/ella/usted": "da",
-          "nosotros": "damos",
-          "vosotros": "dais",
-          "ellos/ellas/ustedes": "dan"
-        },
         "estar": {
           "yo": "estoy",
           "tú": "estás",
@@ -191,7 +185,8 @@
           "morir": "muer",
           "morder": "muerd",
           "mostrar": "muestr",
-          "soñar": "seuñ",
+          "oler": "huel",
+          "soñar": "sueñ",
           "volver": "vuelv"
         },
         "u_ue": {
