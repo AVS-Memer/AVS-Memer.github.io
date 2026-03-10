@@ -34,14 +34,22 @@ document.getElementById("conjugate").onclick = () => {
       });
     }
     if (pov == "yo") {
+      let foundIrregularYo = false;
       Object.values(verbs.tense.present_indicative.irregular_yo_verbs).forEach(irregular => {
         if (Object.keys(irregular).includes(verb)) {
           stem = irregular[verb].slice(0,irregular[verb].length-1);
+          foundIrregularYo = true;
           if (irregular == verbs.tense.present_indicative.irregular_yo_verbs.other) {
             ending = irregular[verb].slice(irregular[verb].length-1);
           }
         }
       });
+      if (!foundIrregularYo) {
+        if (verb.endsWith("ger") || verb.endsWith("gir")) stem = stem.slice(0,-1) + "j";
+        else if (verb.endsWith("cer") || verb.endsWith("cir")) stem = stem.slice(0,-1) + "zc";
+        else if (verb.endsWith("guir")) stem = stem.slice(0, -2) + "g";
+        ending = "o";
+      }
     }
     if (Object.keys(verbs.tense.present_indicative.irregulars).includes(verb)) {
       document.getElementById("answer").value = (reflexive?reflexive + " ":"") + verbs.tense.present_indicative.irregulars[verb][pov];
