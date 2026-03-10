@@ -83,8 +83,8 @@ document.getElementById("conjugate").onclick = () => {
       } else if (verb.slice(verb.length-3) == "gar") {
         stem = verb.slice(verb.length-3);
         ending = "gué";
-      } else if (verb.slice(verb.length-3) == "guar") {
-        stem = verb.slice(verb.length-3);
+      } else if (verb.slice(verb.length-4) == "guar") {
+        stem = verb.slice(verb.length-4);
         ending = "güé";
       } else if (verb.slice(verb.length-3) == "zar") {
         stem = verb.slice(verb.length-3);
