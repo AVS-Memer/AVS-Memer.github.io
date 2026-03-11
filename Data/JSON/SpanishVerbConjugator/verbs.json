@@ -268,22 +268,6 @@
           "vosotros": "disteis",
           "ellos/ellas/ustedes": "dieron"
         },
-        "estar": {
-          "yo": "estoy",
-          "tú": "estás",
-          "él/ella/usted": "está",
-          "nosotros": "estamos",
-          "vosotros": "estáis",
-          "ellos/ellas/ustedes": "están"
-        },
-        "haber": {
-          "yo": "he",
-          "tú": "has",
-          "él/ella/usted": "ha",
-          "nosotros": "habemos",
-          "vosotros": "habéis",
-          "ellos/ellas/ustedes": "han"
-        },
         "hacer": {
           "yo": "hice",
           "tú": "hices",
