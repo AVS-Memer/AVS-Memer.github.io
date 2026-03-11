@@ -51,11 +51,6 @@ const conjugate = (verbInput, pov, tense) => {
   } else if (tense == "preterite indicative") {
     stem = verb.slice(0,-2);
     ending = verbs.tense.preterite_indicative.endings[verb.slice(-2)][pov];
-    if (verb.endsWith("cir")) {
-      stem = stem.slice(0,-1) + "j";
-      ending = verbs.tense.preterite_indicative.endings.irregular[pov];
-      if (pov == "ellos/ellas/ustedes") ending = ending.slice(1);
-    }
     if (["él/ella/usted","ellos/ellas/ustedes"].includes(pov) && verb.endsWith("uir") && !verb.endsWith("guir")) ending = "y" + ending.slice(1);
     Object.values(verbs.tense.preterite_indicative.stem_changes).forEach(stemChange => {
       if (Object.keys(stemChange).includes(verb)) {
@@ -75,6 +70,11 @@ const conjugate = (verbInput, pov, tense) => {
         }
       }
     });
+    if (verb.endsWith("cir")) {
+      stem = stem.slice(0,-1) + "j";
+      ending = verbs.tense.preterite_indicative.endings.irregular[pov];
+      if (pov == "ellos/ellas/ustedes") ending = ending.slice(1);
+    }
     if (pov == "yo") {
       if (verb.endsWith("car")) {
         stem = verb.slice(0,-3);
