@@ -49,24 +49,25 @@ const conjugate = (verbInput, pov, tense) => {
     if (Object.keys(verbs.tense.present_indicative.irregulars).includes(verb)) return (reflexive?reflexive + " ":"") + verbs.tense.present_indicative.irregulars[verb][pov];
     else return (reflexive?reflexive + " ":"") + stem + ending;
   } else if (tense == "preterite indicative") {
-    stem = verb.slice(0,verb.length-2);
-    ending = verbs.tense.preterite_indicative.endings[verb.slice(verb.length-2)][pov];
+    stem = verb.slice(0,-2);
+    ending = verbs.tense.preterite_indicative.endings[verb.slice(-2)][pov];
     if (!["nosotros","vosotros"].includes(pov)) {
       if (["él/ella/usted","ellos/ellas/ustedes"].includes(pov)) {
-        if (verb.slice(verb.length-3) == "uir" && verb.slice(verb.length-4) != "guir") ending = "y" + ending.slice(1);
-        else if (verb.slice(verb.length-3) == "cir") ending = ending.slice(1);
+        if (verb.endsWith("uir") && !verb.endsWith("guir")) ending = "y" + ending.slice(1);
+        else if (verb.endsWith("cir")) ending = ending.slice(1);
       }
       Object.values(verbs.tense.preterite_indicative.stem_changes).forEach(stemChange => {
         if (Object.keys(stemChange).includes(verb)) {
           stem = stemChange[verb];
           if (stemChange == verbs.tense.preterite_indicative.stem_changes.i_y) {
             ending = "y" + ending.slice(1);
-            console.log(stemChange, verb, stem, ending);
-          } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.j) stem = stem.slice(stem.length-1) + "j";
-          else if (stemChange == verbs.tense.preterite_indicative.stem_changes.irregular) ending = verbs.tense.preterite_indicative.endings[pov];
+          } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.j) {
+            stem += "j";
+            ending = verbs.tense.preterite_indicative.endings.irregular[pov];
+          } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.other) ending = verbs.tense.preterite_indicative.endings.irregular[pov];
         }
       });
-      if (verb.slice(verb.length-3) == "cir") stem = stem.slice(stem.length-1) + "j";
+      if (verb.endsWith("cir")) stem = stem.slice(stem.length-1) + "j";
     }
     if (pov == "yo") {
       if (verb.endsWith("car")) {
