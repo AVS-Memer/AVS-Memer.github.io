@@ -1,5 +1,4 @@
 let verbs = {};
-let tense, pov, verb, reflexive, stem, ending;
 fetch("/Data/JSON/SpanishVerbConjugator/verbs.json")
   .then(res => {return res.json()})
   .then(data => Object.keys(data).forEach(form => verbs[form] = data[form]))
@@ -12,10 +11,10 @@ document.getElementById("msg").onclick = () => {
   }
 }
 document.getElementById("conjugate").onclick = () => {
-  pov = document.getElementById("pov").value;
-  tense = document.getElementById("tense").value;
-  verb = document.getElementById("verb").value;
-  reflexive = null;
+  document.getElementById("answer").value = conjugate(document.getElementById("verb").value,document.getElementById("pov").value,document.getElementById("tense").value);
+}
+const conjugate = (verbInput, pov, tense) => {
+  let stem, ending, verb = verbInput, reflexive = null;
   if (verb.slice(verb.length-2) == "se") {
     verb = verb.slice(0,verb.length-2);
     reflexive = verbs.reflexive_pronouns[pov];
@@ -24,13 +23,9 @@ document.getElementById("conjugate").onclick = () => {
     stem = verb.slice(0,verb.length-2);
     ending = verbs.tense.present_indicative.endings[verb.slice(verb.length-2)][pov];
     if (!["nosotros","vosotros"].includes(pov)) {
-      if (verb.slice(verb.length-3) == "uir" && verb.slice(verb.length-4) != "guir") {
-        stem += "y";
-      }
+      if (verb.slice(verb.length-3) == "uir" && verb.slice(verb.length-4) != "guir") stem += "y";
       Object.values(verbs.tense.present_indicative.stem_changes).forEach(stemChange => {
-        if (Object.keys(stemChange).includes(verb)) {
-          stem = stemChange[verb];
-        }
+        if (Object.keys(stemChange).includes(verb)) stem = stemChange[verb];
       });
     }
     if (pov == "yo") {
@@ -51,21 +46,15 @@ document.getElementById("conjugate").onclick = () => {
         ending = "o";
       }
     }
-    if (Object.keys(verbs.tense.present_indicative.irregulars).includes(verb)) {
-      document.getElementById("answer").value = (reflexive?reflexive + " ":"") + verbs.tense.present_indicative.irregulars[verb][pov];
-    } else {
-      document.getElementById("answer").value = (reflexive?reflexive + " ":"") + stem + ending;
-    }
+    if (Object.keys(verbs.tense.present_indicative.irregulars).includes(verb)) return (reflexive?reflexive + " ":"") + verbs.tense.present_indicative.irregulars[verb][pov];
+    else return (reflexive?reflexive + " ":"") + stem + ending;
   } else if (tense == "preterite indicative") {
     stem = verb.slice(0,verb.length-2);
     ending = verbs.tense.preterite_indicative.endings[verb.slice(verb.length-2)][pov];
     if (!["nosotros","vosotros"].includes(pov)) {
       if (["él/ella/usted","ellos/ellas/ustedes"].includes(pov)) {
-        if (verb.slice(verb.length-3) == "uir" && verb.slice(verb.length-4) != "guir") {
-          ending = "y" + ending.slice(1);
-        } else if (verb.slice(verb.length-3) == "cir") {
-          ending = ending.slice(1);
-        }
+        if (verb.slice(verb.length-3) == "uir" && verb.slice(verb.length-4) != "guir") ending = "y" + ending.slice(1);
+        else if (verb.slice(verb.length-3) == "cir") ending = ending.slice(1);
       }
       Object.values(verbs.tense.preterite_indicative.stem_changes).forEach(stemChange => {
         if (Object.keys(stemChange).includes(verb)) {
@@ -73,44 +62,44 @@ document.getElementById("conjugate").onclick = () => {
           if (stemChange == verbs.tense.preterite_indicative.stem_changes.i_y) {
             ending = "y" + ending.slice(1);
             console.log(stemChange, verb, stem, ending);
-          } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.j) {
-            stem = stem.slice(stem.length-1) + "j";
-          } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.irregular) {
-            ending = verbs.tense.preterite_indicative.endings[pov];
-          }
+          } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.j) stem = stem.slice(stem.length-1) + "j";
+          else if (stemChange == verbs.tense.preterite_indicative.stem_changes.irregular) ending = verbs.tense.preterite_indicative.endings[pov];
         }
       });
-      if (verb.slice(verb.length-3) == "cir") {
-        stem = stem.slice(stem.length-1) + "j";
-      }
+      if (verb.slice(verb.length-3) == "cir") stem = stem.slice(stem.length-1) + "j";
     }
     if (pov == "yo") {
-      if (verb.slice(verb.length-3) == "car") {
-        stem = verb.slice(verb.length-3);
+      if (verb.endsWith("car")) {
+        stem = verb.slice(-3);
         ending = "qué";
-      } else if (verb.slice(verb.length-3) == "gar") {
-        stem = verb.slice(verb.length-3);
+      } else if (verb.endsWith("gar")) {
+        stem = verb.slice(-3);
         ending = "gué";
-      } else if (verb.slice(verb.length-4) == "guar") {
-        stem = verb.slice(verb.length-4);
+      } else if (verb.endsWith("guar")) {
+        stem = verb.slice(-4);
         ending = "güé";
-      } else if (verb.slice(verb.length-3) == "zar") {
-        stem = verb.slice(verb.length-3);
+      } else if (verb.endsWith("zar")) {
+        stem = verb.slice(-3);
         ending = "cé";
       }
     }
-    if (Object.keys(verbs.tense.preterite_indicative.irregulars).includes(verb)) {
-      document.getElementById("answer").value = (reflexive?reflexive + " ":"") + verbs.tense.preterite_indicative.irregulars[verb][pov];
-    } else {
-      document.getElementById("answer").value = (reflexive?reflexive + " ":"") + stem + ending;
-    }
+    if (Object.keys(verbs.tense.preterite_indicative.irregulars).includes(verb)) return (reflexive?reflexive + " ":"") + verbs.tense.preterite_indicative.irregulars[verb][pov];
+    else return (reflexive?reflexive + " ":"") + stem + ending;
   } else if (tense == "imperfect indicative") {
-    stem = verb.slice(0,verb.length-2);
+    stem = verb.slice(0,-2);
     ending = verbs.tense.imperfect_indicative.endings[verb.slice(verb.length-2)][pov];
-    if (Object.keys(verbs.tense.imperfect_indicative.irregulars).includes(verb)) {
-      document.getElementById("answer").value = (reflexive?reflexive + " ":"") + verbs.tense.imperfect_indicative.irregulars[verb][pov];
-    } else {
-      document.getElementById("answer").value = (reflexive?reflexive + " ":"") + stem + ending;
-    }
+    if (Object.keys(verbs.tense.imperfect_indicative.irregulars).includes(verb)) return (reflexive?reflexive + " ":"") + verbs.tense.imperfect_indicative.irregulars[verb][pov];
+    else return (reflexive?reflexive + " ":"") + stem + ending;
+  } else if (tense == "present perfect indicative") {
+    return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"present indicative")+" "+conjugate(verb,null,"past participle");
+  } else if (tense == "past participle") {
+    Object.keys(verbs.tense.past_participle.irregulars_roots).forEach(root => {
+      if (verb.endsWith(root)) return verb.slice(0,-root.length)+verbs.tense.past_participle.irregulars_roots[root];
+    })
+    if (Object.keys(verbs.tense.past_participle.irregulars).includes(verb)) return verbs.tense.past_participle.irregulars[verb];
+    stem = verb.slice(0,-2);
+    ending = verbs.tense.past_participle.endings[verb.slice(-2)];
+    if (ending == "ido" && ["a","e","i","o","u"].includes(stem.slice(-1))) ending = "ído";
+    return stem + ending;
   }
 }
