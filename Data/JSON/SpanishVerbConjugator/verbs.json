@@ -321,7 +321,6 @@
       },
       "stem_changes": {
         "e_i": {
-          "decir": "dij",
           "divertir": "divirt",
           "mentir": "mint",
           "pedir": "pid",
@@ -347,6 +346,7 @@
         "other": {
           "andar": "anduv",
           "caber": "cup",
+          "decir": "dic",
           "estar": "estuv",
           "haber": "hub",
           "poder": "pud",
