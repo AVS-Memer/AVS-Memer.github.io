@@ -101,5 +101,7 @@ const conjugate = (verbInput, pov, tense) => {
     ending = verbs.tense.past_participle.endings[verb.slice(-2)];
     if (ending == "ido" && ["a","e","i","o","u"].includes(stem.slice(-1))) ending = "ído";
     return stem + ending;
+  } else if (tense == "plurperfect indicative") {
+    return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"imperfect indicative")+" "+conjugate(verb,null,"past participle");
   }
 }
