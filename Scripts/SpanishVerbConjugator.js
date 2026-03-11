@@ -104,5 +104,9 @@ const conjugate = (verbInput, pov, tense) => {
     return stem + ending;
   } else if (tense == "pluperfect indicative") {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"imperfect indicative")+" "+conjugate(verb,null,"past participle");
+  } else if (tense == "preterite perfect indicative") {
+    return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"preterite indicative")+" "+conjugate(verb,null,"past participle");
+  } else if (tense == "imperfect subjunctive") {
+    return (reflexive?reflexive + " ":"")+conjugate(verb,"ellos/ellas/ustedes","preterite indicative").slice(0,-3)+verbs.tense.imperfect_subjunctive_endings[pov];
   }
 }
