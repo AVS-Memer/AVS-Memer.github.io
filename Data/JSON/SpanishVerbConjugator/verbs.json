@@ -54,6 +54,28 @@
         }
       }
     },
+    "past_participle": {
+      "endings": {
+        "ar": "ado".
+        "er": "ido",
+        "ir": "ido",
+        "ír": "ído"
+      },
+      "irregulars_roots": {
+        "acer": "echo",
+        "brir": "bierto",
+        "olver": "uelto",
+        "poner": "puesto"
+      },
+      "irregulars": {
+        "decir": "dicho",
+        "escribir": "escrito",
+        "imprimir": "impreso",
+        "morir": "muerto",
+        "romper": "roto",
+        "ver": "visto"
+      }
+    },
     "present_indicative": {
       "endings": {
         "ar": {
@@ -120,7 +142,7 @@
           "yo": "he",
           "tú": "has",
           "él/ella/usted": "ha",
-          "nosotros": "habemos",
+          "nosotros": "hemos",
           "vosotros": "habéis",
           "ellos/ellas/ustedes": "han"
         },
