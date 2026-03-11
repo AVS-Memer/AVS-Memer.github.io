@@ -51,36 +51,42 @@ const conjugate = (verbInput, pov, tense) => {
   } else if (tense == "preterite indicative") {
     stem = verb.slice(0,-2);
     ending = verbs.tense.preterite_indicative.endings[verb.slice(-2)][pov];
-    if (!["nosotros","vosotros"].includes(pov)) {
-      if (["él/ella/usted","ellos/ellas/ustedes"].includes(pov)) {
-        if (verb.endsWith("uir") && !verb.endsWith("guir")) ending = "y" + ending.slice(1);
-        else if (verb.endsWith("cir")) ending = ending.slice(1);
-      }
-      Object.values(verbs.tense.preterite_indicative.stem_changes).forEach(stemChange => {
-        if (Object.keys(stemChange).includes(verb)) {
-          stem = stemChange[verb];
-          if (stemChange == verbs.tense.preterite_indicative.stem_changes.i_y) {
-            ending = "y" + ending.slice(1);
-          } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.j) {
-            stem += "j";
-            ending = verbs.tense.preterite_indicative.endings.irregular[pov];
-          } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.other) ending = verbs.tense.preterite_indicative.endings.irregular[pov];
-        }
-      });
-      if (verb.endsWith("cir")) stem = stem.slice(stem.length-1) + "j";
+    if (verb.endsWith("cir")) {
+      stem = stem.slice(0,-1) + "j";
+      ending = verbs.tense.preterite_indicative.endings.irregular[pov];
+      if (pov == "ellos/ellas/ustedes") ending = ending.slice(1);
     }
+    if (["él/ella/usted","ellos/ellas/ustedes"].includes(pov) && verb.endsWith("uir") && !verb.endsWith("guir")) ending = "y" + ending.slice(1);
+    Object.values(verbs.tense.preterite_indicative.stem_changes).forEach(stemChange => {
+      if (Object.keys(stemChange).includes(verb)) {
+        if (stemChange == verbs.tense.preterite_indicative.stem_changes.e_i) {
+          if (["él/ella/usted","ellos/ellas/ustedes"].includes(pov)) stem = stemChange[verb];
+        } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.i_y) {
+          if (["él/ella/usted","ellos/ellas/ustedes"].includes(pov)) ending = "y" + ending.slice(1);
+        } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.j) {
+          stem += "j";
+          ending = verbs.tense.preterite_indicative.endings.irregular[pov];
+          if (pov == "ellos/ellas/ustedes") ending = ending.slice(1);
+        } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.o_u) {
+          if (["él/ella/usted","ellos/ellas/ustedes"].includes(pov)) stem = stemChange[verb];
+        } else if (stemChange == verbs.tense.preterite_indicative.stem_changes.other) {
+          stem = stemChange[verb];
+          ending = verbs.tense.preterite_indicative.endings.irregular[pov];
+        }
+      }
+    });
     if (pov == "yo") {
       if (verb.endsWith("car")) {
-        stem = verb.slice(-3);
+        stem = verb.slice(0,-3);
         ending = "qué";
       } else if (verb.endsWith("gar")) {
-        stem = verb.slice(-3);
+        stem = verb.slice(0,-3);
         ending = "gué";
       } else if (verb.endsWith("guar")) {
-        stem = verb.slice(-4);
+        stem = verb.slice(0,-4);
         ending = "güé";
       } else if (verb.endsWith("zar")) {
-        stem = verb.slice(-3);
+        stem = verb.slice(0,-3);
         ending = "cé";
       }
     }
