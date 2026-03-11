@@ -54,6 +54,16 @@
         }
       }
     },
+    "imperfect_subjunctive": {
+      "endings": {
+        "yo": "ra",
+        "tú": "ras",
+        "él/ella/usted": "ra",
+        "nosotros": "ramos",
+        "vosotros": "rais",
+        "ellos/ellas/ustedes": "an"
+      }
+    },
     "past_participle": {
       "endings": {
         "ar": "ado",
