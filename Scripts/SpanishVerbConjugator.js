@@ -93,9 +93,9 @@ const conjugate = (verbInput, pov, tense) => {
   } else if (tense == "present perfect indicative") {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"present indicative")+" "+conjugate(verb,null,"past participle");
   } else if (tense == "past participle") {
-    Object.keys(verbs.tense.past_participle.irregulars_roots).forEach(root => {
+    for (const root of Object.keys(verbs.tense.past_participle.irregulars_roots)) {
       if (verb.endsWith(root)) return verb.slice(0,-root.length)+verbs.tense.past_participle.irregulars_roots[root];
-    })
+    }
     if (Object.keys(verbs.tense.past_participle.irregulars).includes(verb)) return verbs.tense.past_participle.irregulars[verb];
     stem = verb.slice(0,-2);
     ending = verbs.tense.past_participle.endings[verb.slice(-2)];
