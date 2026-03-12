@@ -119,11 +119,25 @@ const conjugate = (verbInput, pov, tense) => {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"future indicative")+" "+conjugate(verb,null,"past participle");
   } else if (tense == "preterite perfect indicative") {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"preterite indicative")+" "+conjugate(verb,null,"past participle");
+  } else if (tense == "present subjunctive") {
+    stem = conjugate(verb,"yo","present indicative").slice(0,-1);
+    ending = verbs.tense.present_indicative.endings[verb.endsWith("ar") ? "er" : "ar"][pov == "yo" ? "él/ella/usted" : pov];
+    if (verb.endsWith("car")) stem = stem.slice(0,-1)+"qu";
+    else if (verb.endsWith("gar")) stem = stem.slice(0,-1)+"gu";
+    else if (verb.endsWith("guar")) stem = stem.slice(0,-1)+"ü";
+    else if (verb.endsWith("zar")) stem = stem.slice(0,-1)+"c";
+    if (Object.keys(verbs.tense.present_subjunctive.irregulars).includes(verb)) {
+      stem = verbs.tense.present_subjunctive.irregulars[verb];
+      if (verb.endsWith("ar")) ending = "é"+ending.slice(1);
+    }
+    return (reflexive?reflexive + " ":"") + verb + ending;
   } else if (tense == "imperfect subjunctive") {
     stem = conjugate(verb,"ellos/ellas/ustedes","preterite indicative").slice(0,-3);
     ending = verbs.tense.imperfect_subjunctive.endings[pov];
     if (pov == "nosotros") stem = stem.slice(0,-1)+{"a": "á", "e": "é"}[stem.slice(-1)];
     return (reflexive?reflexive + " ":"")+stem+ending;
+  } else if (tense == "present perfect subjunctive") {
+    return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"present subjunctive")+" "+conjugate(verb,null,"past participle");
   } else if (tense == "pluperfect subjunctive") {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"imperfect subjunctive")+" "+conjugate(verb,null,"past participle");
   } else if (tense == "past participle") {
