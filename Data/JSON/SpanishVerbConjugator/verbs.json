@@ -371,6 +371,7 @@
       },
       "stem_changes": {
         "e_i": {
+          "decir": "dic",
           "divertir": "divirt",
           "mentir": "mint",
           "pedir": "pid",
@@ -378,6 +379,7 @@
           "repetir": "repit",
           "seguir": "sigu",
           "servir": "sirv",
+          "venir": "vin",
           "vestir": "vist"
         },
         "i_y": {
@@ -391,7 +393,8 @@
         },
         "o_u": {
           "dormir": "durm",
-          "morir": "mur"
+          "morir": "mur",
+          "poder": "pud"
         },
         "other": {
           "andar": "anduv",
