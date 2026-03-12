@@ -113,8 +113,11 @@ const conjugate = (verbInput, pov, tense) => {
   } else if (tense == "preterite perfect indicative") {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"preterite indicative")+" "+conjugate(verb,null,"past participle");
   } else if (tense == "imperfect subjunctive") {
-    return (reflexive?reflexive + " ":"")+conjugate(verb,"ellos/ellas/ustedes","preterite indicative").slice(0,-3)+verbs.tense.imperfect_subjunctive.endings[pov];
+    stem = conjugate(verb,"ellos/ellas/ustedes","preterite indicative").slice(0,-3);
+    ending = verbs.tense.imperfect_subjunctive.endings[pov];
+    if (pov == "nosotros") stem = stem.slice(0,-1)+{"a": "á", "e": "é"}[stem.slice(-1)];
+    return (reflexive?reflexive + " ":"")+stem+ending;
   } else if (tense == "pluperfect subjunctive") {
-    return (reflexive?reflexive + " ":"")+"hubie"+verbs.tense.imperfect_subjunctive.endings[pov]+" "+conjugate(verb,null,"past participle");
+    return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"imperfect subjunctive")+" "+conjugate(verb,null,"past participle");
   }
 }
