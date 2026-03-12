@@ -266,6 +266,16 @@
         }
       }
     },
+    "present_subjunctive" {
+      "irregulars": {
+        "dar": "d",
+        "estar": "est",
+        "haber": "hay",
+        "ir": "vay",
+        "saber": "sep",
+        "ser": "se"
+      }
+    },
     "preterite_indicative": {
       "endings": {
         "ar": {
