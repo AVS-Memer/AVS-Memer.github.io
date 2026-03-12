@@ -1,5 +1,35 @@
 {
   "tense": {
+    "future_indicative": {
+      "endings": {
+        "yo": "é",
+        "tú": "ás",
+        "él/ella/usted": "á",
+        "nosotros": "emos",
+        "vosotros": "éis",
+        "ellos/ellas/ustedes": "án"
+      },
+      "irregulars": {
+        "br": {
+          "caber": "cabr",
+          "haber": "habr",
+          "saber": "sabr"
+        },
+        "dr": {
+          "poder": "podr",
+          "poner": "pondr",
+          "salir": "saldr",
+          "tener": "tendr",
+          "valer": "valdr",
+          "venir": "vendr"
+        },
+        "other": {
+          "decir": "dir",
+          "hacer": "har",
+          "querer": "querr"
+        }
+      }
+    }
     "imperfect_indicative": {
       "endings": {
         "ar": {
