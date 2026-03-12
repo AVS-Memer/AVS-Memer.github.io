@@ -1,5 +1,15 @@
 {
   "tense": {
+    "conditional_indicative": {
+      "endings": {
+        "yo": "ía",
+        "tú": "ías",
+        "él/ella/usted": "ía",
+        "nosotros": "íamos",
+        "vosotros": "íais",
+        "ellos/ellas/ustedes": "ían"
+      }
+    },
     "future_indicative": {
       "endings": {
         "yo": "é",
