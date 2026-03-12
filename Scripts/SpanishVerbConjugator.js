@@ -97,19 +97,26 @@ const conjugate = (verbInput, pov, tense) => {
     ending = verbs.tense.imperfect_indicative.endings[verb.slice(verb.length-2)][pov];
     if (Object.keys(verbs.tense.imperfect_indicative.irregulars).includes(verb)) return (reflexive?reflexive + " ":"") + verbs.tense.imperfect_indicative.irregulars[verb][pov];
     else return (reflexive?reflexive + " ":"") + stem + ending;
+  } else if (tense == "conditional indicative") {
+    ending = verbs.tense.conditional_indicative.endings[pov];
+    Object.keys(verbs.tense.future_indicative.irregulars).forEach(stemChange => {
+      if (Object.keys(stemChange).includes(verb)) return (reflexive?reflexive + " ":"") + stemChange[verb] + ending;
+    });
+    return (reflexive?reflexive + " ":"") + verb + ending;
+  } else if (tense == "future indicative") {
+    ending = verbs.tense.future_indicative.endings[pov];
+    Object.keys(verbs.tense.future_indicative.irregulars).forEach(stemChange => {
+      if (Object.keys(stemChange).includes(verb)) return (reflexive?reflexive + " ":"") + stemChange[verb] + ending;
+    });
+    return (reflexive?reflexive + " ":"") + verb + ending;
   } else if (tense == "present perfect indicative") {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"present indicative")+" "+conjugate(verb,null,"past participle");
-  } else if (tense == "past participle") {
-    for (const root of Object.keys(verbs.tense.past_participle.irregulars_roots)) {
-      if (verb.endsWith(root)) return verb.slice(0,-root.length)+verbs.tense.past_participle.irregulars_roots[root];
-    }
-    if (Object.keys(verbs.tense.past_participle.irregulars).includes(verb)) return verbs.tense.past_participle.irregulars[verb];
-    stem = verb.slice(0,-2);
-    ending = verbs.tense.past_participle.endings[verb.slice(-2)];
-    if (ending == "ido" && ["a","e","i","o","u"].includes(stem.slice(-1))) ending = "ído";
-    return stem + ending;
   } else if (tense == "pluperfect indicative") {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"imperfect indicative")+" "+conjugate(verb,null,"past participle");
+  } else if (tense == "conditional perfect indicative") {
+    return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"conditional indicative")+" "+conjugate(verb,null,"past participle");
+  } else if (tense == "future perfect indicative") {
+    return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"future indicative")+" "+conjugate(verb,null,"past participle");
   } else if (tense == "preterite perfect indicative") {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"preterite indicative")+" "+conjugate(verb,null,"past participle");
   } else if (tense == "imperfect subjunctive") {
@@ -119,5 +126,14 @@ const conjugate = (verbInput, pov, tense) => {
     return (reflexive?reflexive + " ":"")+stem+ending;
   } else if (tense == "pluperfect subjunctive") {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"imperfect subjunctive")+" "+conjugate(verb,null,"past participle");
+  } else if (tense == "past participle") {
+    for (const root of Object.keys(verbs.tense.past_participle.irregulars_roots)) {
+      if (verb.endsWith(root)) return verb.slice(0,-root.length)+verbs.tense.past_participle.irregulars_roots[root];
+    }
+    if (Object.keys(verbs.tense.past_participle.irregulars).includes(verb)) return verbs.tense.past_participle.irregulars[verb];
+    stem = verb.slice(0,-2);
+    ending = verbs.tense.past_participle.endings[verb.slice(-2)];
+    if (ending == "ido" && ["a","e","i","o","u"].includes(stem.slice(-1))) ending = "ído";
+    return stem + ending;
   }
 }
