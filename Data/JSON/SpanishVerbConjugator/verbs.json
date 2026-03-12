@@ -266,7 +266,7 @@
         }
       }
     },
-    "present_subjunctive" {
+    "present_subjunctive": {
       "irregulars": {
         "dar": "d",
         "estar": "est",
