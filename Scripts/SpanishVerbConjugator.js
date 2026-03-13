@@ -51,7 +51,7 @@ const conjugate = (verbInput, pov, tense) => {
   } else if (tense == "preterite indicative") {
     stem = verb.slice(0,-2);
     ending = verbs.tense.preterite_indicative.endings[verb.slice(-2)][pov];
-    if (["él/ella/usted","ellos/ellas/ustedes"].includes(pov) && verb.endsWith("uir") && !verb.endsWith("guir")) ending = "y" + ending.slice(1);
+    if (["él/ella/usted","ellos/ellas/ustedes"].includes(pov) && ['a','e','i','o','u'].includes(verb.charAt(verb.length-3)) && ['e','i','í'].includes(verb.charAt(verb.length-2)) && !verb.endsWith("guir")) ending = "y" + ending.slice(1);
     Object.values(verbs.tense.preterite_indicative.stem_changes).forEach(stemChange => {
       if (Object.keys(stemChange).includes(verb)) {
         if (stemChange == verbs.tense.preterite_indicative.stem_changes.e_i) {
