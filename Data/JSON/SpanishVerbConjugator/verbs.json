@@ -330,7 +330,7 @@
         },
         "hacer": {
           "yo": "hice",
-          "tú": "hices",
+          "tú": "hiciste",
           "él/ella/usted": "hizo",
           "nosotros": "hicimos",
           "vosotros": "hicisteis",
@@ -343,14 +343,6 @@
           "nosotros": "fuimos",
           "vosotros": "fuisteis",
           "ellos/ellas/ustedes": "fueron"
-        },
-        "oír": {
-          "yo": "oigo",
-          "tú": "oyes",
-          "él/ella/usted": "oye",
-          "nosotros": "oímos",
-          "vosotros": "oís",
-          "ellos/ellas/ustedes": "oyen"
         },
         "ser": {
           "yo": "fui",
