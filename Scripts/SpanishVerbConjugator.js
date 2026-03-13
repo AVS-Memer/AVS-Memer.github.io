@@ -15,8 +15,8 @@ document.getElementById("conjugate").onclick = () => {
 }
 const conjugate = (verbInput, pov, tense) => {
   let stem, ending, verb = verbInput, reflexive = null;
-  if (verb.slice(verb.length-2) == "se") {
-    verb = verb.slice(0,verb.length-2);
+  if (verb.endsWith("se")) {
+    verb = verb.slice(0,-2);
     reflexive = verbs.reflexive_pronouns[pov];
   }
   if (tense == "present indicative") {
@@ -140,6 +140,12 @@ const conjugate = (verbInput, pov, tense) => {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"present subjunctive")+" "+conjugate(verb,null,"past participle");
   } else if (tense == "pluperfect subjunctive") {
     return (reflexive?reflexive + " ":"")+conjugate("haber",pov,"imperfect subjunctive")+" "+conjugate(verb,null,"past participle");
+  } else if (tense == "imperative (positive)") {
+    if (pov == "tu") return conjugate(verb,"él/ella/usted","present indicative")+(reflexive?"te":"");
+    else if (pov == "vosotros") verb.slice(0,-1)+(reflexive?"os":"d");
+    else return (reflexive?reflexive + " ":"")+conjugate(verb,pov,"present subjunctive");
+  } else if (tense == "imperative (negative)") {
+    return "no "+(reflexive?reflexive + " ":"")+conjugate(verbInput,pov,"present subjunctive");
   } else if (tense == "past participle") {
     for (const root of Object.keys(verbs.tense.past_participle.irregulars_roots)) {
       if (verb.endsWith(root)) return verb.slice(0,-root.length)+verbs.tense.past_participle.irregulars_roots[root];
